@@ -1,13 +1,15 @@
+import React from 'react';
 
 function Skils() {
     return (
-        <>
-            <h2>Vertu í bandi</h2>
+        <div className="Skils">
+            <h2>Kunnátta</h2>
             <ul>
-                <li>kristinn713@gmail.com</li>
-                <li>691-3314</li>
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
             </ul>
-        </>
+        </div>
     );
 }
 
