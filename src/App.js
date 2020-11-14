@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css'
-import Contact from './components/Contact';
+import Contact from './pages/Contact';
 import Nav from './components/Nav';
 
 function App() {

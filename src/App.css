@@ -1,17 +1,10 @@
-.App {
-    background-color: aquamarine;
-}
-
-/*-----------------------Nav-------------------------*/
-
-.Nav {
-    display: flex;
-    background-color: lightgray;
-}
-
-.Nav-Links {
-    list-style: none;
-    
-}
-
-/*----------------------Contact---------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
