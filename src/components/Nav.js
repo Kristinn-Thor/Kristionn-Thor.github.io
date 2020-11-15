@@ -2,17 +2,17 @@ import React from 'react';
 
 function Nav() {
     return (
-        <nav className="Nav">
-            <div className="Nav-HomeBtn">
-                <button>HOME</button>
-            </div>
-            <ul className="Nav-Links">
-                <li>Projects</li>
-                <li>Skills</li>
-                <li>Contact</li>
-                <li>About me</li>
-            </ul>
-        </nav>
+        <div className="Nav-wrapper">
+            <nav className="Nav">
+                <div className="Nav-HomeBtn">
+                    <button>HOME</button>
+                </div>
+                <div className="Nav-Projects">Projects</div>
+                <div className="Nav-Skills">Skills</div>
+                <div className="Nav-Contact">Contact</div>
+                <div className="Nav-About">About me</div>
+            </nav>
+        </div>
     );
 }
 
