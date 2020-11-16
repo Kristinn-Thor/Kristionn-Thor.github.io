@@ -5,10 +5,12 @@ import Nav from './components/Nav';
 import Projects from './pages/Projects';
 import Skils from './pages/Skils';
 import About from './pages/About';
+import Home from './pages/Home';
 
 function App() {
   return (
     <div className="App">
+      <Home />
       <Projects />
       <Skils />
       <Contact />
