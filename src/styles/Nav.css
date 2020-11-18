@@ -44,7 +44,6 @@
   
   .Nav-HomeBtn {
     position: absolute;
-    grid-area: home;
   }
 
   .Nav-HomeBtn img {
@@ -56,19 +55,14 @@
     grid-area: projects;
   }
 
-
   .Nav-Skills {
     grid-area: skills;
   }
-
-
   
   .Nav-Contact {
     grid-area: contact;
   }
 
-
-  
   .Nav-About {
     grid-area: about;
   }
