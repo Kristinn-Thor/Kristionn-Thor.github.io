@@ -7,7 +7,7 @@ import SkilsButton from '../svg/Skils-Btn.svg';
 import ContactButton from '../svg/Contact-Btn.svg';
 import AboutButton from '../svg/About-Btn.svg';
 //-----Styles-----//
-import '../styles/Nav.css';
+import '../styles/Nav.scss';
 
 function Nav() {
     return (

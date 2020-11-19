@@ -6,14 +6,16 @@
     margin-top: 10%;
     color:#FFF;
     letter-spacing: 1px;
+
+    & h1 {
+      font-size: 3em;
+      letter-spacing: 3px;
+    }
+    
+    & p {
+      margin-top: 5%;
+      line-height: 2em;
+    }
+
   }
   
-  .HomeSection h1 {
-    font-size: 3em;
-    letter-spacing: 3px;
-  }
-  
-  .HomeSection p {
-    margin-top: 5%;
-    line-height: 2em;
-  }

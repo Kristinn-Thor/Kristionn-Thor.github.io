@@ -1,0 +1,79 @@
+.Nav {
+  position: sticky;
+  bottom: 8vh;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 5vw;
+  min-height: 50px;
+  min-width: 320px;
+  margin: auto;
+
+  &-Effect {
+    position: absolute;
+    background-color: rgba(152, 159, 226, 0.3);
+    width: 80vw;
+    min-width: 300px;
+    height: 100%;
+    border-radius: 50px;
+    z-index: 0;
+  }
+
+  &-Grid {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "projects skills . contact about";
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-Link {
+    text-decoration: none;
+    color: #FFF;
+    z-index: 1;
+    filter: blur(1px);
+    cursor: pointer;
+  }
+
+  &-Link-img {
+    width: 2vw;
+    min-width: 20px;
+    margin: auto;
+  }
+
+  &-HomeBtn {
+    position: absolute;
+  }
+  
+  &-HomeBtn img {
+    width: 10vw;
+    min-width: 50px;
+  }
+  
+  &-Projects {
+    grid-area: projects;
+  }
+  
+  &-Skills {
+    grid-area: skills;
+  }
+  
+  &-Contact {
+    grid-area: contact;
+  }
+  
+  &-About {
+    grid-area: about;
+  }
+
+}
+
+.selected {
+  filter: none;
+}
+
+
+
