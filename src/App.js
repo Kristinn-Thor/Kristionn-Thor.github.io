@@ -8,16 +8,22 @@ import About from './pages/About';
 import Home from './pages/Home';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
+const routes = [
+  { path: "/", name: "Home", component: Home},
+  { path: "/projects", name: "Projects", component: Projects},
+  { path: "/skils", name: "Skils", component: Skils},
+  { path: "/contact", name: "Contact", component: Contact},
+  { path: "/about", name: "About", component: About}
+];
+
 function App() {
   return (
     <Router>
     <div className="App">
       <Switch>
-      <Route path="/" exact component={Home} />
-      <Route path="/projects" component={Projects} />
-      <Route path="/skils" component={Skils} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/about" component={About} />
+        {routes.map(({path, component}, index) => (
+          <Route key={index} path={path} exact component={component}></Route>
+        ))}
       </Switch>
       <Nav />
     </div>
