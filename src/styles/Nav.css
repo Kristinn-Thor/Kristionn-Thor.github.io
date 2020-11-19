@@ -1,18 +1,19 @@
 .Nav {
     position: sticky;
-    bottom: 10%;
+    bottom: 8vh;
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 10vw;
+    width: 80%;
+    height: 5vw;
     min-height: 50px;
     min-width: 320px;
+    margin: auto;
   }
 
 .Nav-Effect {
     position: absolute;
     background-color: rgba(152, 159, 226, 0.3);
-    width: 90vw;
+    width: 80vw;
     min-width: 300px;
     height: 100%;
     border-radius: 50px;
@@ -34,10 +35,20 @@
     text-decoration: none;
     color: #FFF;
     z-index: 1;
+    filter: blur(1px);
+    cursor: pointer;
+  }
+
+  .Nav-Link:active {
+    /*text-emphasis: none;*/
+  }
+
+  .selected {
+    filter: none;
   }
 
   .Nav-Link-img {
-      width: 4vw;
+      width: 2vw;
       min-width: 20px;
       margin: auto;
   }
@@ -47,7 +58,7 @@
   }
 
   .Nav-HomeBtn img {
-      width: 15vw;
+      width: 10vw;
       min-width: 50px;
   }
 
