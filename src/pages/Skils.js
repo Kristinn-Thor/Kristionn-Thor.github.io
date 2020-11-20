@@ -1,6 +1,11 @@
-import React from 'react';
+//-----React Import-----//
+import React, {useEffect} from 'react';
 
 function Skils() {
+    useEffect(()=>
+    console.log('Halló Skils')
+    )
+
     return (
         <div className="Skils">
             <div className="Background">

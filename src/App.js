@@ -1,12 +1,17 @@
+//-----React Import-----//
 import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+//-----Style Import-----//
 import './App.scss';
-import Contact from './pages/Contact';
+//-----Component Import-----//
 import Nav from './components/Nav';
-import Projects from './pages/Projects';
+//-----Page/Component Import-----//
 import Skils from './pages/Skils';
 import About from './pages/About';
 import Home from './pages/Home';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
+
 
 const routes = [
   { path: "/", name: "Home", component: Home},
