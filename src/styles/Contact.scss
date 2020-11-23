@@ -1,0 +1,27 @@
+.Contact {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 97vw;
+    height: 97vh;
+    display: flex;
+    flex-direction: column;
+    
+    
+    &-Title {
+        color: white;
+        margin: 100px 0 50px 10%;
+        opacity: 0; // For animation
+    }
+
+    &-Info {
+        color: white;
+        list-style: none;
+        margin-left: 10%;
+        line-height: 4rem;
+    
+        & el {
+            opacity: 0; // For animation
+        }
+    }
+}
