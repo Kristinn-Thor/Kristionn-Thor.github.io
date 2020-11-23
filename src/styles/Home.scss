@@ -1,23 +1,56 @@
-.HomeSection {
+.Home {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 97vw;
+  height: 97vh;
+
+  &-Section {
+    position: relative;
     display: flex;
-    width: 356px;
-    flex-direction: column;
     align-items: center;
-    margin-top: 10%;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
     color:#FFF;
     letter-spacing: 1px;
+    padding: 25px;
 
-    & h1 {
-      opacity: 0;
-      font-size: 3em;
+    @media (max-width: 900px) {
+        flex-direction: column;
+    }
+
+    &-Title {
+      text-align: end;
+      width: 50%;
+      font-size: 2em;
       letter-spacing: 3px;
+      margin-right: 50px;
+      margin-left: 15%;
+      opacity: 0; // For animation
+
+      @media (max-width: 900px) {
+        text-align: start;
+        margin: 20px;
+        width: 80%;
+    }
+
     }
     
-    & p {
-      opacity: 0;
-      margin-top: 5%;
+    &-Text {
+      margin-right: 15%;
+      margin-left: 50px;
+      width: 50%;
       line-height: 2em;
+      opacity: 0; // For animation
+
+      @media (max-width: 900px) {
+        margin: 20px;
+        width: 80%; 
+    }
     }
 
   }
+
+}
   

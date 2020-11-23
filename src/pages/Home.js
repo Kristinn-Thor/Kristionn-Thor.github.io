@@ -19,27 +19,30 @@ function Home() {
             {
                 opacity: 1,
                 x: '0',
-               
+
             },
             0.2 // Stagger time
         );
-    },[]);
+    }, []);
 
     let textRef = useRef([]);
 
     return (
-        <div className="Home">
+        <>
             <div className="Background">
                 <div className="Overlay">
-                    <section className="HomeSection">
-                        <h1 ref={el => { textRef.current[0] = el }}>Halló Heimur!</h1>
-                        <p ref={el => { textRef.current[1] = el }}>
-                            Velkominn á heimasíðuna mína. Hér má finna upplýsingar um mig, það sem ég kann og nokkur verkefni tengd vefforritunun sem ég hef lokið.
+                    <div className="Mask"></div>
+                    <div className="Home">
+                        <section className="Home-Section">
+                            <h1 className="Home-Section-Title" ref={el => { textRef.current[0] = el }}>Halló Heimur!</h1>
+                            <p className="Home-Section-Text" ref={el => { textRef.current[1] = el }}>
+                                Velkominn á heimasíðuna mína. Hér má finna upplýsingar um mig, það sem ég kann og nokkur verkefni tengd vefforritunun sem ég hef lokið.
                             </p>
-                    </section>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
