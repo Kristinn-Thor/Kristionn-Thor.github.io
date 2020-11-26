@@ -23,6 +23,7 @@ function Contact() {
 
     let maskRef = useRef(null);
     let textRef = useRef([]);
+    const textStyle = { opacity: 0};
 
     return (
         <>
@@ -30,10 +31,10 @@ function Contact() {
                 <div className="Overlay">
                 <div className="Mask" ref={el =>{maskRef=el}}></div>
                     <div className="Contact">
-                        <h1 className="Contact-Title" ref={el => {textRef.current[0] = el}}>Vertu í bandi</h1>
+                        <h1 className="Contact-Title" ref={el => {textRef.current[0] = el}} style={textStyle}>Vertu í bandi</h1>
                         <ul className="Contact-Info">
-                            <li ref={el => {textRef.current[1] = el}}>kristinn713@gmail.com</li>
-                            <li ref={el => {textRef.current[2] = el}}>691-3314</li>
+                            <li ref={el => {textRef.current[1] = el}} style={textStyle}>kristinn713@gmail.com</li>
+                            <li ref={el => {textRef.current[2] = el}} style={textStyle}>691-3314</li>
                         </ul>
                     </div>
                 </div>

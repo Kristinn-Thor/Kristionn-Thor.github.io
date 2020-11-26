@@ -9,9 +9,8 @@
     
     
     &-Title {
-        color: white;
+        color: #29D9B9;
         margin: 100px 0 50px 10%;
-        opacity: 0; // For animation
     }
 
     &-Info {
@@ -19,9 +18,5 @@
         list-style: none;
         margin-left: 10%;
         line-height: 4rem;
-    
-        & el {
-            opacity: 0; // For animation
-        }
     }
 }

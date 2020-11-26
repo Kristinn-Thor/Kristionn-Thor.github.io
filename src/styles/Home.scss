@@ -19,13 +19,13 @@
     }
 
     &-Title {
+      color: #29D9B9;
       text-align: start;
       width: 50%;
       font-size: 3em;
       letter-spacing: 3px;
       margin-left: 10%;
       margin-right: 30px;
-      opacity: 0; // For animation
 
       @media (max-width: 768px) {
         margin: 20px;
@@ -42,7 +42,6 @@
       margin-right: 10%;
       width: 50%;
       line-height: 2em;
-      opacity: 0; // For animation
 
       @media (max-width: 768px) {
         margin: 20px;
