@@ -4,14 +4,12 @@ import '../styles/About.scss';
 
 function About() {
     useEffect(() => {
-        TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1.5 });
-        TweenMax.fromTo(containerRef, { x: '-700'}, { x: '0', ease:'power2' ,duration: 2 });
+        TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
         TweenMax.staggerFromTo(textRef.current, 1, { x: '-900' }, { x: '0', opacity: '1' }, 0.2);
     }, []);
 
     let maskRef = useRef(null);
     let textRef = useRef([]);
-    let containerRef = useRef(null);
     const textStyle = { opacity: '0', overflow: 'visible' };
 
     return (
@@ -23,10 +21,7 @@ function About() {
 
                     </div>
                     <div className="About">
-                        <div 
-                        className="About-Container"
-                        ref={el => {containerRef = el}}
-                        >
+                        <div className="About-Container">
                             <h1
                                 className="About-Container-Header"
                                 ref={el => { textRef.current[0] = el }}

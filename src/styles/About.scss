@@ -3,7 +3,8 @@
     top: 0px;
     left: 0px;
     width: 97vw;
-    height: 97vh;
+    height: 82vh;
+    overflow-y: auto;
 
     &-Container {
         display: grid;
@@ -12,7 +13,7 @@
         margin-left: 10%;
         margin-right: 10%;
         height: 65vh;
-        overflow-y: auto;
+        
 
         &-Header {
             font-size: 2em;

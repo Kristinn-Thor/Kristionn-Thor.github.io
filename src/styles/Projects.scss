@@ -3,7 +3,33 @@
     top: 0px;
     left: 0px;
     width: 97vw;
-    height: 97vh;
-    display: grid;
+    height: 82vh;
+    overflow-y: auto;
+    color: white;
+
+    &-Container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10vh;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    &-Title {
+        color: #29D9B9;
+        margin-bottom: 25px;
+    }
+
+    &-List {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+
+        &-Item {
+            background-color: rgba($color: #293AD9, $alpha: 0.3);
+            padding: 1.5rem;
+            border-radius: 2rem;
+        }
+    }
     
 }

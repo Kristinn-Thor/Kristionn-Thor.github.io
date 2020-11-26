@@ -5,8 +5,8 @@ import '../styles/Projects.scss';
 
 function Projects() {
     useEffect(() => {
-        TweenMax.fromTo(maskRef, {x:'700', y:'-700'}, {x:'0', y:'0', duration: 1});
-    },[]);
+        TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
+    }, []);
 
     let maskRef = useRef(null);
 
@@ -14,15 +14,17 @@ function Projects() {
         <>
             <div className="Background">
                 <div className="Overlay">
-                    <div className="Mask" ref={el =>{maskRef=el}}></div>
+                    <div className="Mask" ref={el => { maskRef = el }}></div>
                     <div className="Projects">
-                        <h2>Verkefni</h2>
-                        <div className="Projects-container">
-                            <div>Verkefni 1</div>
-                            <div>Verkefni 2</div>
-                            <div>Verkefni 3</div>
-                            <div>Verkefni 4</div>
-                            <div>Verkefni 5</div>
+                        <div className="Projects-Container">
+                            <h1 className="Projects-Title">Verkefni</h1>
+                            <div className="Projects-List">
+                                <div className="Projects-List-Item">Verkefni 1</div>
+                                <div className="Projects-List-Item">Verkefni 2</div>
+                                <div className="Projects-List-Item">Verkefni 3</div>
+                                <div className="Projects-List-Item">Verkefni 4</div>
+                                <div className="Projects-List-Item">Verkefni 5</div>
+                            </div>
                         </div>
                     </div>
                 </div>
