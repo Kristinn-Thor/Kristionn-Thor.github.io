@@ -1,6 +1,7 @@
 //-----React Import-----//
 import React, { useEffect, useRef } from 'react';
 import { TweenMax } from 'gsap';
+import NumberAnimation from '../components/NumberAnimation'
 import '../styles/Skils.scss';
 
 function Skils() {
@@ -12,7 +13,7 @@ function Skils() {
     let javaSkill = 70;
     let htmlSkill = 80;
     let cssSkill = 80;
-    let reactSkill = 40;
+    let reactSkill = 30;
 
     return (
         <>
@@ -23,19 +24,19 @@ function Skils() {
                         <div className="Skils-Container">
                             <h1 className="Skils-Title">Kunnátta</h1>
                             <div className="Skils-JavaScript Skils-Skill">
-                                <h3>JavaScript {javaSkill}%</h3>
+                                <h3>JavaScript <NumberAnimation from={0} to={javaSkill} duration={1.5} />% </h3>
                                 <span className="Skils-Bars"><span className="Bars-Progression"></span></span>
                             </div>
                             <div className="Skils-HTML Skils-Skill">
-                                <h3>HTML {htmlSkill}%</h3>
+                                <h3>HTML <NumberAnimation from={0} to={htmlSkill} duration={1.5}/>%</h3>
                                 <span className="Skils-Bars"><span className="Bars-Progression"></span></span>
                             </div>
                             <div className="Skils-CSS Skils-Skill">
-                                <h3>CSS {cssSkill}%</h3>
+                                <h3>CSS <NumberAnimation from={0} to={cssSkill} duration={1.5} />%</h3>
                                 <span className="Skils-Bars"><span className="Bars-Progression"></span></span>
                             </div>
                             <div className="Skils-React Skils-Skill">
-                                <h3>React {reactSkill}%</h3>
+                                <h3>React <NumberAnimation from={0} to={reactSkill} duration={1.5} />%</h3>
                                 <span className="Skils-Bars"><span className="Bars-Progression"></span></span>
                             </div>
                         </div>
