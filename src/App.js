@@ -12,7 +12,6 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
-
 const routes = [
   { path: "/", name: "Home", component: Home},
   { path: "/projects", name: "Projects", component: Projects},
