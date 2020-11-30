@@ -17,7 +17,7 @@ function Projects() {
                     <div className="Mask" ref={el => { maskRef = el }}></div>
                     <div className="Projects">
                         <div className="Projects-Container">
-                            <h1 className="Projects-Title">Verkefni</h1>
+                            <h1 className="Projects-Title h1">Verkefni</h1>
                             <div className="Projects-List">
                                 <div className="Projects-List-Item">Verkefni 1</div>
                                 <div className="Projects-List-Item">Verkefni 2</div>

@@ -23,7 +23,7 @@ function About() {
                     <div className="About">
                         <div className="About-Container">
                             <h1
-                                className="About-Container-Header"
+                                className="About-Container-Header h1"
                                 ref={el => { textRef.current[0] = el }}
                                 style={textStyle}
                             >Um mig

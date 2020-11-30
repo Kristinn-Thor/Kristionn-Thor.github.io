@@ -1,7 +1,8 @@
 //-----React Import-----//
 import React, { useEffect, useRef } from 'react';
 import { TweenMax } from 'gsap';
-import NumberAnimation from '../components/NumberAnimation'
+import NumberAnimation from '../components/NumberAnimation';
+import BarAnimation from '../components/BarAnimation';
 import '../styles/Skils.scss';
 //-----Font Awesome Imports-----//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,46 +28,54 @@ function Skils() {
                     <div className="Mask" ref={el => { maskRef = el }}></div>
                     <div className="Skils">
                         <div className="Skils-Container">
-                            <h1 className="Skils-Title">Kunnátta</h1>
-                            <div className="Skils-JavaScript Skils-Skill">
-                                <h3>
+                            <h1 className="Skils-Title h1">Kunnátta</h1>
+                            <div className="Skils-Skill">
+                                <h3 className="Skils-Skill-Title h3">
                                     <FontAwesomeIcon icon={['fab', 'js-square']} className="icon fa-js" />
                                     JavaScript
                                     <span className="Skils-NumberAnimation">
                                         <NumberAnimation from={0} to={javaSkill} duration={1.5} />%
                                     </span>
                                 </h3>
-                                <span className="Skils-Bars"><span className="Bars-Progression"></span></span>
+                                <span className="Skils-Bars-Container">
+                                    <BarAnimation from={0} to={javaSkill} duration={1.5} name="Skils-Bars-java Skils-Bars"></BarAnimation>
+                                </span>
                             </div>
-                            <div className="Skils-HTML Skils-Skill">
-                                <h3>
+                            <div className="Skils-Skill">
+                                <h3 className="Skils-Skill-Title h3">
                                     <FontAwesomeIcon icon={['fab', 'html5']} className="icon fa-html" />
                                     HTML
                                     <span className="Skils-NumberAnimation">
                                         <NumberAnimation from={0} to={htmlSkill} duration={1.5} />%
                                     </span>
                                 </h3>
-                                <span className="Skils-Bars"><span className="Bars-Progression"></span></span>
+                                <span className="Skils-Bars-Container">
+                                    <BarAnimation from={0} to={htmlSkill} duration={1.5} name="Skils-Bars-html Skils-Bars"></BarAnimation>
+                                </span>
                             </div>
-                            <div className="Skils-CSS Skils-Skill">
-                                <h3>
+                            <div className="Skils-Skill">
+                                <h3 className="Skils-Skill-Title h3">
                                     <FontAwesomeIcon icon={['fab', 'css3']} className="icon fa-css" />
                                     CSS
                                     <span className="Skils-NumberAnimation">
                                         <NumberAnimation from={0} to={cssSkill} duration={1.5} />%
                                     </span>
                                 </h3>
-                                <span className="Skils-Bars"><span className="Bars-Progression"></span></span>
+                                <span className="Skils-Bars-Container">
+                                    <BarAnimation from={0} to={cssSkill} duration={1.5} name="Skils-Bars-css Skils-Bars"></BarAnimation>
+                                </span>
                             </div>
-                            <div className="Skils-React Skils-Skill">
-                                <h3>
+                            <div className="Skils-Skill">
+                                <h3 className="Skils-Skill-Title h3">
                                     <FontAwesomeIcon icon={['fab', 'react']} className="icon fa-react" />
                                     React
                                     <span className="Skils-NumberAnimation">
                                         <NumberAnimation from={0} to={reactSkill} duration={1.5} />%
                                     </span>
                                 </h3>
-                                <span className="Skils-Bars"><span className="Bars-Progression"></span></span>
+                                <span className="Skils-Bars-Container">
+                                    <BarAnimation from={0} to={reactSkill} duration={1.5} name="Skils-Bars-react Skils-Bars"></BarAnimation>
+                                </span>
                             </div>
                         </div>
                     </div>

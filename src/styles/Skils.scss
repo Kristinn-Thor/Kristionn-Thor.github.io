@@ -1,3 +1,5 @@
+@import 'Variables';
+
 .Skils {
     position: absolute;
     top: 0px;
@@ -15,7 +17,7 @@
     }
 
     &-Title {
-        color: #29D9B9;
+        color: $Theme-ColorGreen;
         margin-bottom: 25px;
     }
 
@@ -24,14 +26,37 @@
     }
 
     &-Skill {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
+
+        &-Title {
+            margin-bottom: .2em;
+        }
+    }
+
+    &-Bars-Container {
+        background-color: none;
+        display: block;
+        width: 100%;
+        height: 1rem;
     }
 
     &-Bars {
-        background-color: salmon;
-        display: block;
-        width: 50vw;
-        height: 1rem;
+        border-radius: 1em;
+        &-java {
+            background-color: $Java-Color;
+        }
+
+        &-html {
+            background-color: $HTML-Color;
+        }
+
+        &-css {
+            background-color: $CSS-Color;
+        }
+
+        &-react {
+            background-color: $React-Color;
+        }
     }
     
 }
