@@ -10,7 +10,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(fab);
 
-function Skils() {
+function Skils({lightOn}) {
     useEffect(() => {
         TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
     }, []);
@@ -23,7 +23,7 @@ function Skils() {
 
     return (
         <>
-            <div className="Background">
+            <div className={`Background${lightOn ? '--Light-Mode' : ''}`}>
                 <div className="Overlay">
                     <div className="Mask" ref={el => { maskRef = el }}></div>
                     <div className="Skils">

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { TweenMax } from 'gsap';
 import '../styles/Contact.scss';
 
-function Contact() {
+function Contact({lightOn}) {
     useEffect(() => {
         TweenMax.fromTo(maskRef, {x:'700', y:'-700'}, {x:'0', y:'0', duration: 1});
         TweenMax.staggerFromTo(
@@ -27,7 +27,7 @@ function Contact() {
 
     return (
         <>
-            <div className="Background">
+            <div className={`Background${lightOn ? '--Light-Mode' : ''}`}>
                 <div className="Overlay">
                 <div className="Mask" ref={el =>{maskRef=el}}></div>
                     <div className="Contact">

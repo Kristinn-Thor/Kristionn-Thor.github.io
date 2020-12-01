@@ -3,7 +3,7 @@ import { TweenMax } from 'gsap';
 import '../styles/Projects.scss';
 
 
-function Projects() {
+function Projects({lightOn}) {
     useEffect(() => {
         TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
     }, []);
@@ -12,7 +12,7 @@ function Projects() {
 
     return (
         <>
-            <div className="Background">
+            <div className={`Background${lightOn ? '--Light-Mode' : ''}`}>
                 <div className="Overlay">
                     <div className="Mask" ref={el => { maskRef = el }}></div>
                     <div className="Projects">

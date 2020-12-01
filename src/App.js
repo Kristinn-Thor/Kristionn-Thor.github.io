@@ -1,6 +1,7 @@
 //-----React Import-----//
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useState } from 'react';
 //-----Style Import-----//
 import './App.scss';
 //-----Component Import-----//
@@ -13,24 +14,35 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
 const routes = [
-  { path: "/", name: "Home", component: Home},
-  { path: "/projects", name: "Projects", component: Projects},
-  { path: "/skils", name: "Skils", component: Skils},
-  { path: "/contact", name: "Contact", component: Contact},
-  { path: "/about", name: "About", component: About}
+  { path: "/", name: "Home", component: Home },
+  { path: "/projects", name: "Projects", component: Projects },
+  { path: "/skils", name: "Skils", component: Skils },
+  { path: "/contact", name: "Contact", component: Contact },
+  { path: "/about", name: "About", component: About }
 ];
 
 function App() {
+  const [lightMode, setLightMode] = useState(false);
+
+  const toggleLightMode = () => {
+    setLightMode(!lightMode);
+}
+
   return (
     <Router>
-    <div className="App">
-      <Switch>
-        {routes.map(({path, component}, index) => (
-          <Route key={index} path={path} exact component={component}></Route>
-        ))}
-      </Switch>
-      <Nav />
-    </div>
+      <div className="App">
+        <Switch>
+          {routes.map(({ path, component: C }, index) => (
+            <Route
+              key={index}
+              path={path}
+              exact
+              render={(props) => <C {...props} lightOn={lightMode} onToggleLightMode={toggleLightMode} />}>
+            </Route>
+          ))}
+        </Switch>
+        <Nav />
+      </div>
     </Router>
   );
 }
