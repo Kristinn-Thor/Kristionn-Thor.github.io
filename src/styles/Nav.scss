@@ -13,7 +13,17 @@
 
   &-Effect {
     position: absolute;
-    background-color: rgba(152, 159, 226, 0.3);
+    background-color: $Effect-Color;
+    width: 80vw;
+    min-width: 300px;
+    height: 100%;
+    border-radius: 50px;
+    z-index: 0;
+  }
+
+  &-Effect--Light-Mode {
+    position: absolute;
+    background-color: $Effect-Color-LM;
     width: 80vw;
     min-width: 300px;
     height: 100%;

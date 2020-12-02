@@ -41,7 +41,7 @@ function App() {
             </Route>
           ))}
         </Switch>
-        <Nav />
+        <Nav lightOn={lightMode} />
       </div>
     </Router>
   );

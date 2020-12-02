@@ -5,12 +5,13 @@ import NumberAnimation from '../components/NumberAnimation';
 import BarAnimation from '../components/BarAnimation';
 import '../styles/Skils.scss';
 //-----Font Awesome Imports-----//
+import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(fab);
 
-function Skils({lightOn}) {
+function Skils({ lightOn, onToggleLightMode }) {
     useEffect(() => {
         TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
     }, []);
@@ -27,6 +28,16 @@ function Skils({lightOn}) {
                 <div className="Overlay">
                     <div className="Mask" ref={el => { maskRef = el }}></div>
                     <div className="Skils">
+                        <button
+                            title="Toggle dark mode"
+                            className="DarkMode-btn"
+                            onClick={onToggleLightMode}
+                            aria-label="toggle dark mode">
+                            <FontAwesomeIcon
+                                icon={faAdjust}
+                                style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
+                            </FontAwesomeIcon>
+                        </button>
                         <div className="Skils-Container">
                             <h1 className="Skils-Title h1">Kunnátta</h1>
                             <div className="Skils-Skill">

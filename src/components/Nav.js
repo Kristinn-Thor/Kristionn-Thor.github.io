@@ -9,7 +9,7 @@ import AboutButton from '../svg/About-Btn.svg';
 //-----Styles-----//
 import '../styles/Nav.scss';
 
-function Nav() {
+function Nav({lightOn}) {
     return (
         <nav className="Nav">
             <div className="Nav-Grid">
@@ -29,7 +29,7 @@ function Nav() {
                     <img className="Nav-Link-img" src={AboutButton} alt="Um mig" />
                 </NavLink>
             </div>
-            <div className="Nav-Effect"></div>
+            <div className={`Nav-Effect${lightOn ? '--Light-Mode':''}`}></div>
         </nav>
     );
 }

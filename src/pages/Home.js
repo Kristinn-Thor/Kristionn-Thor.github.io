@@ -6,7 +6,7 @@ import '../styles/Home.scss';
 import { TweenMax } from 'gsap';
 //-----Font Awesome Imports-----//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAdjust } from '@fortawesome/free-solid-svg-icons'
+import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 
 function Home({ lightOn, onToggleLightMode }) {
     useEffect(() => {
@@ -34,7 +34,7 @@ function Home({ lightOn, onToggleLightMode }) {
                                 aria-label="toggle dark mode">
                                 <FontAwesomeIcon
                                     icon={faAdjust}
-                                    style={{ color: `${lightOn ? 'rgb(13, 22, 38)' : 'white'}` }}>
+                                    style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
                                 </FontAwesomeIcon>
                             </button>
                             <h1

@@ -11,7 +11,6 @@
     right: 20px;
     top: 20px;
     cursor: pointer;
-    color: whitesmoke;
     border: none;
     font-size: 1em;
     width: 1em;
@@ -21,7 +20,7 @@
  }
 
  .DarkMode-btn:hover {
-   transform: scale(1.2) rotateZ(180deg);
+   transform: scale(1.2);
  }
 
  .Background {
@@ -40,9 +39,22 @@
     height: 100vh;
     background-color: $Light-Color;
 
+    & h1 {
+      color: $Theme-ColorBlue;
+    }
+
     & h3,p,li {
       color: black;
     }
+
+    & .Overlay {
+      background-color:$Overlay-Color--LM;
+    }
+
+    & .Mask {
+      background: linear-gradient(45deg, $Theme-ColorGreen--LM, $Theme-ColorBlue--LM);
+    }
+
    }
  }
 

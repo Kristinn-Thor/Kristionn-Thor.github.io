@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { TweenMax } from 'gsap';
 import '../styles/About.scss';
+//-----Font Awesome Imports-----//
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 
-function About({lightOn}) {
+function About({ lightOn, onToggleLightMode }) {
     useEffect(() => {
         TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
         TweenMax.staggerFromTo(textRef.current, 1, { x: '-900' }, { x: '0', opacity: '1' }, 0.2);
@@ -21,6 +24,16 @@ function About({lightOn}) {
 
                     </div>
                     <div className="About">
+                        <button
+                            title="Toggle dark mode"
+                            className="DarkMode-btn"
+                            onClick={onToggleLightMode}
+                            aria-label="toggle dark mode">
+                            <FontAwesomeIcon
+                                icon={faAdjust}
+                                style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
+                            </FontAwesomeIcon>
+                        </button>
                         <div className="About-Container">
                             <h1
                                 className="About-Container-Header h1"
@@ -41,7 +54,7 @@ function About({lightOn}) {
                                 Vivamus porta leo vitae ipsum sagittis iaculis. In vitae eros nec metus aliquam gravida non ornare purus.
                                 Donec porttitor risus vel ex fermentum elementum.
                             </p>
-                            <p  className="About-Container-Text"
+                            <p className="About-Container-Text"
                                 ref={el => { textRef.current[2] = el }}
                                 style={textStyle}
                             >

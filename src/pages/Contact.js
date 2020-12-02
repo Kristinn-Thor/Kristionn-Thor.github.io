@@ -1,10 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { TweenMax } from 'gsap';
 import '../styles/Contact.scss';
+//-----Font Awesome Imports-----//
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 
-function Contact({lightOn}) {
+function Contact({ lightOn, onToggleLightMode }) {
     useEffect(() => {
-        TweenMax.fromTo(maskRef, {x:'700', y:'-700'}, {x:'0', y:'0', duration: 1});
+        TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
         TweenMax.staggerFromTo(
             textRef.current,
             0.6, // Duration
@@ -19,22 +22,32 @@ function Contact({lightOn}) {
             },
             0.1 // Stagger time
         );
-    },[]);
+    }, []);
 
     let maskRef = useRef(null);
     let textRef = useRef([]);
-    const textStyle = { opacity: 0};
+    const textStyle = { opacity: 0 };
 
     return (
         <>
             <div className={`Background${lightOn ? '--Light-Mode' : ''}`}>
                 <div className="Overlay">
-                <div className="Mask" ref={el =>{maskRef=el}}></div>
+                    <div className="Mask" ref={el => { maskRef = el }}></div>
                     <div className="Contact">
-                        <h1 className="Contact-Title h1" ref={el => {textRef.current[0] = el}} style={textStyle}>Vertu í bandi</h1>
+                        <button
+                            title="Toggle dark mode"
+                            className="DarkMode-btn"
+                            onClick={onToggleLightMode}
+                            aria-label="toggle dark mode">
+                            <FontAwesomeIcon
+                                icon={faAdjust}
+                                style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
+                            </FontAwesomeIcon>
+                        </button>
+                        <h1 className="Contact-Title h1" ref={el => { textRef.current[0] = el }} style={textStyle}>Vertu í bandi</h1>
                         <ul className="Contact-Info">
-                            <li ref={el => {textRef.current[1] = el}} style={textStyle}>kristinn713@gmail.com</li>
-                            <li ref={el => {textRef.current[2] = el}} style={textStyle}>691-3314</li>
+                            <li ref={el => { textRef.current[1] = el }} style={textStyle}>kristinn713@gmail.com</li>
+                            <li ref={el => { textRef.current[2] = el }} style={textStyle}>691-3314</li>
                         </ul>
                     </div>
                 </div>
