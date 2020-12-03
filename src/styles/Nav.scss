@@ -8,14 +8,14 @@
   height: 5vw;
   min-height: 50px;
   max-height: 80px;
-  min-width: 320px;
+  min-width: 280px;
   margin: auto;
 
   &-Effect {
     position: absolute;
     background-color: $Effect-Color;
     width: 80vw;
-    min-width: 300px;
+    min-width: 270px;
     height: 100%;
     border-radius: 50px;
     z-index: 0;

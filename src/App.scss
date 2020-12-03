@@ -87,8 +87,23 @@
 
   /*----------------------Font Awesome Icons-----------------------*/
  .icon {
-   font-size: 2em;
+   font-size: 1em;
    margin: 0 .5em 0 0;
+
+   &-gsap {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+   }
+ }
+
+ .svg-container{
+  display: inline-block;
+	position: relative;
+	width: 100%;
+	padding-bottom: 100%; 
+	vertical-align: middle; 
+	overflow: hidden;
  }
 
   .fa-js{

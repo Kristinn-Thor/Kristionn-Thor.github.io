@@ -4,6 +4,8 @@ import { TweenMax } from 'gsap';
 import NumberAnimation from '../components/NumberAnimation';
 import BarAnimation from '../components/BarAnimation';
 import '../styles/Skils.scss';
+//-----Icon Imports-----//
+import gsapLogo from '../svg/logo-man.svg';
 //-----Font Awesome Imports-----//
 import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,10 +19,11 @@ function Skils({ lightOn, onToggleLightMode }) {
     }, []);
 
     let maskRef = useRef(null);
-    let javaSkill = 70;
-    let htmlSkill = 80;
-    let cssSkill = 80;
-    let reactSkill = 30;
+    const javaSkill = 70;
+    const htmlSkill = 80;
+    const cssSkill = 80;
+    const reactSkill = 30;
+    const gsapSkill = 40;
 
     return (
         <>
@@ -38,8 +41,8 @@ function Skils({ lightOn, onToggleLightMode }) {
                                 style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
                             </FontAwesomeIcon>
                         </button>
+                        <h1 className="Skils-Title h1">Kunnátta</h1>
                         <div className="Skils-Container">
-                            <h1 className="Skils-Title h1">Kunnátta</h1>
                             <div className="Skils-Skill">
                                 <h3 className="Skils-Skill-Title h3">
                                     <FontAwesomeIcon icon={['fab', 'js-square']} className="icon fa-js" />
@@ -86,6 +89,18 @@ function Skils({ lightOn, onToggleLightMode }) {
                                 </h3>
                                 <span className="Skils-Bars-Container">
                                     <BarAnimation from={0} to={reactSkill} duration={1.5} name="Skils-Bars-react Skils-Bars"></BarAnimation>
+                                </span>
+                            </div>
+                            <div className="Skils-Skill">
+                                <h3 className="Skils-Skill-Title h3">
+                                    <img className="icon icon-gsap" alt="GSAP Logo" src={gsapLogo}></img>
+                                    GSAP
+                                    <span className="Skils-NumberAnimation">
+                                        <NumberAnimation from={0} to={gsapSkill} duration={1.5} />%
+                                    </span>
+                                </h3>
+                                <span className="Skils-Bars-Container">
+                                    <BarAnimation from={0} to={gsapSkill} duration={1.5} name="Skils-Bars-gsap Skils-Bars"></BarAnimation>
                                 </span>
                             </div>
                         </div>
