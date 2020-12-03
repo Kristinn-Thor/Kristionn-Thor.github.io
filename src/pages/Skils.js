@@ -42,7 +42,7 @@ function Skils({ lightOn, onToggleLightMode }) {
                             </FontAwesomeIcon>
                         </button>
                         <h1 className="Skils-Title h1">Kunnátta</h1>
-                        <div className="Skils-Container">
+                        <div className="Skils-Container" style={ lightOn ? {backgroundColor: 'rgba(25, 106, 153, 0.1)'} : {}}>
                             <div className="Skils-Skill">
                                 <h3 className="Skils-Skill-Title h3">
                                     <FontAwesomeIcon icon={['fab', 'js-square']} className="icon fa-js" />
