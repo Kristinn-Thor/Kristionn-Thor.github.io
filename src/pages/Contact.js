@@ -3,7 +3,7 @@ import { TweenMax } from 'gsap';
 import '../styles/Contact.scss';
 //-----Font Awesome Imports-----//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAdjust } from '@fortawesome/free-solid-svg-icons';
+import { faAdjust, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 function Contact({ lightOn, onToggleLightMode }) {
     useEffect(() => {
@@ -41,13 +41,33 @@ function Contact({ lightOn, onToggleLightMode }) {
                             aria-label="toggle dark mode">
                             <FontAwesomeIcon
                                 icon={faAdjust}
-                                style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
-                            </FontAwesomeIcon>
+                                style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }} />
                         </button>
-                        <h1 className="Contact-Title h1" ref={el => { textRef.current[0] = el }} style={textStyle}>Vertu í bandi</h1>
+                        <h1
+                            className="Contact-Title h1"
+                            ref={el => { textRef.current[0] = el }}
+                            style={textStyle}>
+                            Vertu í bandi
+                        </h1>
                         <ul className="Contact-Info">
-                            <li ref={el => { textRef.current[1] = el }} style={textStyle}>kristinn713@gmail.com</li>
-                            <li ref={el => { textRef.current[2] = el }} style={textStyle}>691-3314</li>
+                            <li
+                                ref={el => { textRef.current[1] = el }}
+                                style={textStyle}>
+                                <FontAwesomeIcon 
+                                icon={faEnvelope}
+                                style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}
+                                className="icon icon-contact"/> 
+                                kristinn713@gmail.com
+                            </li>
+                            <li
+                                ref={el => { textRef.current[2] = el }}
+                                style={textStyle}>
+                                <FontAwesomeIcon 
+                                icon={faPhone}
+                                style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}
+                                className="icon icon-contact"/> 
+                                691-3314
+                            </li>
                         </ul>
                     </div>
                 </div>

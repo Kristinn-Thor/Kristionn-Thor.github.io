@@ -14,11 +14,11 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
 const routes = [
-  { path: "/", name: "Home", component: Home },
-  { path: "/projects", name: "Projects", component: Projects },
-  { path: "/skils", name: "Skils", component: Skils },
-  { path: "/contact", name: "Contact", component: Contact },
-  { path: "/about", name: "About", component: About }
+  { path: "/", exact: true, name: "Home", component: Home },
+  { path: "/projects", exact: false, name: "Projects", component: Projects },
+  { path: "/skils", exact: false, name: "Skils", component: Skils },
+  { path: "/contact", exact: false, name: "Contact", component: Contact },
+  { path: "/about", exact: false, name: "About", component: About }
 ];
 
 function App() {
@@ -32,11 +32,11 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          {routes.map(({ path, component: C }, index) => (
+          {routes.map(({ path, exact, component: C }, index) => (
             <Route
               key={index}
               path={path}
-              exact
+              exact={exact}
               render={(props) => <C {...props} lightOn={lightMode} onToggleLightMode={toggleLightMode} />}>
             </Route>
           ))}

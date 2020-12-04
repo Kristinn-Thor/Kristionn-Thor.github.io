@@ -85,25 +85,24 @@
   letter-spacing: 2px;
  }
 
-  /*----------------------Font Awesome Icons-----------------------*/
- .icon {
+  /*----------------------Icons-----------------------*/
+.icon {
    font-size: 1em;
    margin: 0 .5em 0 0;
 
-   &-gsap {
-    display: inline-block;
-    height: 1em;
-    width: 1em;
-   }
- }
+    @media (min-height: 860px) {
+      font-size: 1.5em;
+    }
 
- .svg-container{
-  display: inline-block;
-	position: relative;
-	width: 100%;
-	padding-bottom: 100%; 
-	vertical-align: middle; 
-	overflow: hidden;
+    &-gsap {
+      display: inline-block;
+      height: 1em;
+      width: 1em;
+    }
+
+    &-contact {
+      font-size: 1em;
+    }
  }
 
   .fa-js{
