@@ -37,8 +37,7 @@ function App() {
               key={index}
               path={path}
               exact={exact}
-              render={(props) => <C {...props} lightOn={lightMode} onToggleLightMode={toggleLightMode} />}>
-            </Route>
+              render={(props) => <C {...props} lightOn={lightMode} onToggleLightMode={toggleLightMode} />} />
           ))}
         </Switch>
         <Nav lightOn={lightMode} />
