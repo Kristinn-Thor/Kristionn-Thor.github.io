@@ -43,6 +43,7 @@
   }
 
   &-Link {
+    display: flex;
     text-decoration: none;
     color: #FFF;
     z-index: 1;
@@ -55,10 +56,8 @@
     }
   }
 
-  &-Link-img {
-    width: 2vw;
-    min-width: 20px;
-    margin: auto;
+  &-Link-icon {
+    font-size: 1.5em;
   }
 
   &-HomeBtn {
