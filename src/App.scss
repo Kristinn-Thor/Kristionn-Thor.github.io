@@ -19,8 +19,13 @@
     transition: all .2s ease-in-out;
  }
 
- .DarkMode-btn:hover {
+ .DarkMode-btn:hover, .DarkMode-btn:focus {
    transform: scale(1.2);
+ }
+
+ .DarkMode-btn:focus {
+  outline: none;
+  transform: scale(1.6);
  }
 
  .Background {
