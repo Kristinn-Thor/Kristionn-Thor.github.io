@@ -19,6 +19,14 @@ function Projects({ lightOn, onToggleLightMode }) {
     let match = useRouteMatch();
     let maskRef = useRef(null);
 
+    let itemLinkRef = useRef(null);
+    let containerRef = useRef(null);
+    const handleMouseMove = (e) => {
+        let xAxis = ((e.pageX - containerRef.current.getBoundingClientRect().left)) / 5;
+        let yAxis = ((e.pageY - containerRef.current.getBoundingClientRect().top)) / 5;
+        itemLinkRef.current.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+    }
+
     useEffect(() => {
         if (match.isExact) { // Only play tween if we render /projects exact page
             TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
@@ -43,11 +51,24 @@ function Projects({ lightOn, onToggleLightMode }) {
                                     style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
                                 </FontAwesomeIcon>
                             </button>
-                            <div className="Projects-Container">
+                            <div className="Projects-Container" ref={containerRef}>
                                 <h1 className="Projects-Title h1">Verkefni</h1>
                                 <div className="Projects-List">
-                                    <div className="Projects-List-Item"><Link to={`${match.url}/game`} >TickTackToe</Link></div>
-                                    <div className="Projects-List-Item">Verkefni 2</div>
+                                    <div
+                                        className="Projects-List-Item"
+                                        onMouseMove={handleMouseMove} >
+                                        <Link
+                                            to={`${match.url}/game`}
+                                            className="Projects-List-Item-Link"
+                                            ref={itemLinkRef} >
+                                            TickTackToe
+                                        </Link>
+                                    </div>
+                                    <div
+                                        className="Projects-List-Item"
+                                        onMouseMove={handleMouseMove} >
+                                        Verkefni 2
+                                    </div>
                                     <div className="Projects-List-Item">Verkefni 3</div>
                                     <div className="Projects-List-Item">Verkefni 4</div>
                                     <div className="Projects-List-Item">Verkefni 5</div>
@@ -60,7 +81,7 @@ function Projects({ lightOn, onToggleLightMode }) {
         );
     return (
         <>
-        {console.log(match)}
+            {console.log(match)}
             <Switch>
                 <Route path={`${match.path}/game`} component={Game} />
                 {/* We can add more routes here */}
