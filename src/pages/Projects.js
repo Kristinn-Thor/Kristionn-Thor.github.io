@@ -12,19 +12,28 @@ import { TweenMax } from 'gsap';
 import '../styles/Projects.scss';
 //-----Font Awesome Imports-----//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAdjust } from '@fortawesome/free-solid-svg-icons';
+import { faAdjust, faGamepad } from '@fortawesome/free-solid-svg-icons';
 
 
 function Projects({ lightOn, onToggleLightMode }) {
     let match = useRouteMatch();
     let maskRef = useRef(null);
 
-    let itemLinkRef = useRef(null);
-    let containerRef = useRef(null);
+
+    const handleMouseEnter = (e) => {
+        e.currentTarget.style.transition = 'none';
+    }
+
     const handleMouseMove = (e) => {
-        let xAxis = ((e.pageX - containerRef.current.getBoundingClientRect().left)) / 5;
-        let yAxis = ((e.pageY - containerRef.current.getBoundingClientRect().top)) / 5;
-        itemLinkRef.current.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        let xAxis = ((e.currentTarget.offsetWidth / 2) - (e.pageX - e.currentTarget.getBoundingClientRect().left)) / 15;
+        let yAxis = ((e.pageY - e.currentTarget.getBoundingClientRect().top) - (e.currentTarget.offsetHeight / 2)) / 5;
+
+        e.currentTarget.style.transform = `perspective(300px) scale(1.08) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+    }
+
+    const handleMouseLeave = (e) => {
+        e.currentTarget.style.transition = 'all .5s ease';
+        e.currentTarget.style.transform = 'rotateY(0deg) rotateX(0deg) translateX(0px)';
     }
 
     useEffect(() => {
@@ -36,7 +45,6 @@ function Projects({ lightOn, onToggleLightMode }) {
     if (match.isExact)
         return (
             <>
-                {console.log(match)}
                 <div className={`Background${lightOn ? '--Light-Mode' : ''}`}>
                     <div className="Overlay">
                         <div className="Mask" ref={el => { maskRef = el }}></div>
@@ -51,27 +59,45 @@ function Projects({ lightOn, onToggleLightMode }) {
                                     style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
                                 </FontAwesomeIcon>
                             </button>
-                            <div className="Projects-Container" ref={containerRef}>
+                            <div className="Projects-Container">
                                 <h1 className="Projects-Title h1">Verkefni</h1>
                                 <div className="Projects-List">
+                                    <Link
+                                        className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                                        onMouseMove={handleMouseMove}
+                                        onMouseEnter={handleMouseEnter}
+                                        onMouseLeave={handleMouseLeave}
+                                        to={`${match.url}/game`} >
+                                        <FontAwesomeIcon icon={faGamepad} style={{fontSize: '5em'}} />
+                                    </Link>
                                     <div
-                                        className="Projects-List-Item"
-                                        onMouseMove={handleMouseMove} >
-                                        <Link
-                                            to={`${match.url}/game`}
-                                            className="Projects-List-Item-Link"
-                                            ref={itemLinkRef} >
-                                            TickTackToe
-                                        </Link>
-                                    </div>
-                                    <div
-                                        className="Projects-List-Item"
-                                        onMouseMove={handleMouseMove} >
+                                        className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                                        onMouseMove={handleMouseMove}
+                                        onMouseEnter={handleMouseEnter}
+                                        onMouseLeave={handleMouseLeave} >
                                         Verkefni 2
                                     </div>
-                                    <div className="Projects-List-Item">Verkefni 3</div>
-                                    <div className="Projects-List-Item">Verkefni 4</div>
-                                    <div className="Projects-List-Item">Verkefni 5</div>
+                                    <div
+                                        className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                                        onMouseMove={handleMouseMove}
+                                        onMouseEnter={handleMouseEnter}
+                                        onMouseLeave={handleMouseLeave} >
+                                        Verkefni 3
+                                    </div>
+                                    <div
+                                        className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                                        onMouseMove={handleMouseMove}
+                                        onMouseEnter={handleMouseEnter}
+                                        onMouseLeave={handleMouseLeave} >
+                                        Verkefni 4
+                                    </div>
+                                    <div
+                                        className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                                        onMouseMove={handleMouseMove}
+                                        onMouseEnter={handleMouseEnter}
+                                        onMouseLeave={handleMouseLeave} >
+                                        Verkefni 5
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +107,6 @@ function Projects({ lightOn, onToggleLightMode }) {
         );
     return (
         <>
-            {console.log(match)}
             <Switch>
                 <Route path={`${match.path}/game`} component={Game} />
                 {/* We can add more routes here */}
