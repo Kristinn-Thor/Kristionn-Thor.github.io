@@ -7,17 +7,19 @@ import {
 } from "react-router-dom";
 import Game from '../components/TickTackToeGame';
 //-----GSAP-----//
-import { TweenMax } from 'gsap';
+import { gsap } from 'gsap';
 //-----Styles-----//
 import '../styles/Projects.scss';
 //-----Font Awesome Imports-----//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAdjust, faGamepad } from '@fortawesome/free-solid-svg-icons';
+import { random } from 'gsap/gsap-core';
 
 
 function Projects({ lightOn, onToggleLightMode }) {
     let match = useRouteMatch();
     let maskRef = useRef(null);
+    let linkRef = useRef([]);
 
 
     const handleMouseEnter = (e) => {
@@ -38,9 +40,15 @@ function Projects({ lightOn, onToggleLightMode }) {
 
     useEffect(() => {
         if (match.isExact) { // Only play tween if we render /projects exact page
-            TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
+            gsap.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
+            gsap.timeline()
+                .from(linkRef.current[0], {yPercent: '-300', duration: 0.8, ease: 'back'}, random(0,0.5))
+                .from(linkRef.current[1], {yPercent: '-300', duration: 0.8, ease: 'back'}, random(0,0.5))
+                .from(linkRef.current[2], {yPercent: '-300', duration: 0.8, ease: 'back'}, random(0,0.5))
+                .from(linkRef.current[3], {yPercent: '-400', duration: 0.9, ease: 'back'}, random(0,0.5))
+                .from(linkRef.current[4], {yPercent: '-500', duration: 0.9, ease: 'back'}, random(0,0.5));
         }
-    });
+    },[match.isExact]);
 
     if (match.isExact)
         return (
@@ -64,6 +72,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                                 <div className="Projects-List">
                                     <Link
                                         className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                                        ref={el => {linkRef.current[0] = el}}
                                         onMouseMove={handleMouseMove}
                                         onMouseEnter={handleMouseEnter}
                                         onMouseLeave={handleMouseLeave}
@@ -72,6 +81,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                                     </Link>
                                     <div
                                         className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                                        ref={el => {linkRef.current[1] = el}}
                                         onMouseMove={handleMouseMove}
                                         onMouseEnter={handleMouseEnter}
                                         onMouseLeave={handleMouseLeave} >
@@ -79,6 +89,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                                     </div>
                                     <div
                                         className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                                        ref={el => {linkRef.current[2] = el}}
                                         onMouseMove={handleMouseMove}
                                         onMouseEnter={handleMouseEnter}
                                         onMouseLeave={handleMouseLeave} >
@@ -86,6 +97,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                                     </div>
                                     <div
                                         className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                                        ref={el => {linkRef.current[3] = el}}
                                         onMouseMove={handleMouseMove}
                                         onMouseEnter={handleMouseEnter}
                                         onMouseLeave={handleMouseLeave} >
@@ -93,6 +105,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                                     </div>
                                     <div
                                         className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                                        ref={el => {linkRef.current[4] = el}}
                                         onMouseMove={handleMouseMove}
                                         onMouseEnter={handleMouseEnter}
                                         onMouseLeave={handleMouseLeave} >
