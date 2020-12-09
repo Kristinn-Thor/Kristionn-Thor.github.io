@@ -1,6 +1,6 @@
 //-----React Import-----//
 import React, { useEffect, useRef } from 'react';
-import { TweenMax } from 'gsap';
+import { gsap } from 'gsap';
 import NumberAnimation from '../components/NumberAnimation';
 import BarAnimation from '../components/BarAnimation';
 import '../styles/Skils.scss';
@@ -15,7 +15,7 @@ library.add(fab);
 
 function Skils({ lightOn, onToggleLightMode }) {
     useEffect(() => {
-        TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
+        gsap.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
     }, []);
 
     let maskRef = useRef(null);
