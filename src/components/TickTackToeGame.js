@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/TickTackToeGame.scss';
+import {Link} from 'react-router-dom'
 
 function Square(props) {
     const className = 'square' + (props.lumenate ? ' lumenate' : '');
@@ -124,21 +125,30 @@ export default class Game extends React.Component {
             <div className="Background">
                 <div className="Overlay">
                     <div className="game">
-                        <div className="game-board">
-                            <Board
-                                squares={current.squares}
-                                onClick={(i) => this.handleClick(i)}
-                                winLine={winInfo.line}
-                            />
+                        <Link className="Link" to={'/projects'}>
+                            Back
+                        </Link>
+                        <div className="game-wrapper-left">
+                            <div className="game-board">
+                                <Board
+                                    squares={current.squares}
+                                    onClick={(i) => this.handleClick(i)}
+                                    winLine={winInfo.line}
+                                />
+                            </div>
                         </div>
-                        <div className="game-info">
-                            <div>{status}</div>
-                            <ol>{moves}</ol>
-                            <button
-                                onClick={() => this.handleMoveOrder()}
-                            >
-                                {this.state.isAscending ? 'Change to descending' : 'Chnage to ascending'}
-                            </button>
+                        <div className="game-wrapper-right">
+                            <div className="game-info">
+                                <div className={`game-info-status${winner ? ' lumenate' : ''}`}>{status}</div>
+                                <div className="game-info-buttons">
+                                    <ol>{moves}</ol>
+                                    <button
+                                        onClick={() => this.handleMoveOrder()}
+                                    >
+                                        {this.state.isAscending ? 'Change to descending' : 'Chnage to ascending'}
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

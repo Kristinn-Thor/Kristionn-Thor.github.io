@@ -42,11 +42,11 @@ function Projects({ lightOn, onToggleLightMode }) {
         if (match.isExact) { // Only play tween if we render /projects exact page
             gsap.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
             gsap.timeline()
-                .from(linkRef.current[0], {yPercent: '-300', duration: 0.8, ease: 'back'}, random(0,0.5))
-                .from(linkRef.current[1], {yPercent: '-300', duration: 0.8, ease: 'back'}, random(0,0.5))
-                .from(linkRef.current[2], {yPercent: '-300', duration: 0.8, ease: 'back'}, random(0,0.5))
-                .from(linkRef.current[3], {yPercent: '-400', duration: 0.9, ease: 'back'}, random(0,0.5))
-                .from(linkRef.current[4], {yPercent: '-500', duration: 0.9, ease: 'back'}, random(0,0.5));
+                .fromTo(linkRef.current[0], {yPercent: '-300'}, {yPercent: '0', opacity: 1, duration: 0.8,  ease: 'back'}, random(0,0.5))
+                .fromTo(linkRef.current[1], {yPercent: '-300'}, {yPercent: '0', opacity: 1, duration: 0.8,  ease: 'back'}, random(0,0.5))
+                .fromTo(linkRef.current[2], {yPercent: '-300'}, {yPercent: '0', opacity: 1, duration: 0.8,  ease: 'back'}, random(0,0.5))
+                .fromTo(linkRef.current[3], {yPercent: '-400'}, {yPercent: '0', opacity: 1, duration: 0.9,  ease: 'back'}, random(0,0.5))
+                .fromTo(linkRef.current[4], {yPercent: '-500'}, {yPercent: '0', opacity: 1, duration: 0.9,  ease: 'back'}, random(0,0.5));
         }
     },[match.isExact]);
 
@@ -73,6 +73,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                                     <Link
                                         className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
                                         ref={el => {linkRef.current[0] = el}}
+                                        style={{opacity: '0'}}
                                         onMouseMove={handleMouseMove}
                                         onMouseEnter={handleMouseEnter}
                                         onMouseLeave={handleMouseLeave}
@@ -82,6 +83,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                                     <div
                                         className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
                                         ref={el => {linkRef.current[1] = el}}
+                                        style={{opacity: '0'}}
                                         onMouseMove={handleMouseMove}
                                         onMouseEnter={handleMouseEnter}
                                         onMouseLeave={handleMouseLeave} >
@@ -90,6 +92,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                                     <div
                                         className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
                                         ref={el => {linkRef.current[2] = el}}
+                                        style={{opacity: '0'}}
                                         onMouseMove={handleMouseMove}
                                         onMouseEnter={handleMouseEnter}
                                         onMouseLeave={handleMouseLeave} >
@@ -98,6 +101,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                                     <div
                                         className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
                                         ref={el => {linkRef.current[3] = el}}
+                                        style={{opacity: '0'}}
                                         onMouseMove={handleMouseMove}
                                         onMouseEnter={handleMouseEnter}
                                         onMouseLeave={handleMouseLeave} >
@@ -106,6 +110,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                                     <div
                                         className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
                                         ref={el => {linkRef.current[4] = el}}
+                                        style={{opacity: '0'}}
                                         onMouseMove={handleMouseMove}
                                         onMouseEnter={handleMouseEnter}
                                         onMouseLeave={handleMouseLeave} >

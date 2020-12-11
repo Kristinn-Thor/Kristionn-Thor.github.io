@@ -1,10 +1,111 @@
+@import 'Variables';
 
-  ol, ul {
-    padding-left: 30px;
+.game {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+  @media (max-width: 600px){
+    flex-direction: column;
   }
 
+  &-wrapper-left {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 600px){
+      height: 50%;
+      width: 100%;
+    }
+    @media (max-width: 400px){
+      height: 40%;
+      width: 100%;
+    }
+  }
+
+  &-wrapper-right {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    @media (max-width: 600px){
+      height: 50%;
+      width: 100%;
+    }
+    @media (max-width: 400px){
+      height: 60%;
+      width: 100%;
+    }
+  }
+
+  &-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 40vw;
+    margin-left: 10px;
+
+    @media (min-width: 1200px){
+      width: 30vw;
+      height: 30vw;
+    }
+  }
+
+  &-info {
+    color: $Theme-ColorGreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 10px 0 10px;
+  }
+
+  &-info-status {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 auto 20px auto;
+  }
+
+  &-info ol {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &-info-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &-info li {
+    list-style: none;
+  }
+
+  &-info button {
+    font-size: .6em;
+    width: 8em;
+    margin: .6em;
+    padding: .5em;
+    color: $Theme-ColorGreen;
+    background-color: transparent;
+    border: solid $Theme-ColorGreen;
+    border-radius: 10px;
+  }
+}
+
   .board-row{
-    border-bottom: 1px solid black;
+    height: 33.334%;
+    width: 100%;
+    border-bottom: 2px solid  $Light-Color;
   }
 
   .board-row:after {
@@ -16,26 +117,26 @@
   .board-row:last-child {
     border-bottom: none;
   }
-
-  .status {
-    margin-bottom: 10px;
-  }
   
   .square {
-    background: #fff;
+    background:transparent;
+    color: $Theme-ColorGreen;
     border: none;
     float: left;
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    width: 34px;
+    height: 100%;
+    width: 33.334%;
     text-align: center;
+    cursor: pointer;
+    @media (min-width: 700px){
+      font-size: 2.5em;
+    }
   }
 
   .square:nth-child(2){
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-left: 2px solid  $Light-Color;
+    border-right: 2px solid  $Light-Color;
   }
 
   .lumenate{
@@ -46,15 +147,12 @@
     outline: none;
   }
   
-  .game {
-    display: flex;
-    flex-direction: row;
+  .go-to-move {
+    text-decoration: none;
+    cursor: pointer;
+
+    &:focus{
+      font-weight: bold;
+    }
   }
   
-  .game-info {
-    margin-left: 20px;
-  }
-  
-  .go-to-move:focus{
-    font-weight: bold;
-  }
