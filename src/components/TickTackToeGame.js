@@ -1,12 +1,15 @@
 import React from 'react';
 import '../styles/TickTackToeGame.scss';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
+//-----Font Awesome Imports-----//
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faAdjust } from '@fortawesome/free-solid-svg-icons';
 
 function Square(props) {
-    const className = 'square' + (props.lumenate ? ' lumenate' : '');
+    const className = 'square' + (props.lightOn ? '--Light-Mode' : '');
     return (
         <button
-            className={className}
+            className={`${className}${props.lumenate ? ' lumenate' : ''}`}
             onClick={props.onClick}
         >
             {props.value}
@@ -23,6 +26,7 @@ class Board extends React.Component {
                 value={this.props.squares[i]}
                 onClick={() => this.props.onClick(i)}
                 lumenate={winLine && winLine.includes(i)}
+                lightOn={this.props.lightOn}
             />
         );
     }
@@ -35,7 +39,13 @@ class Board extends React.Component {
             for (let j = 0; j < boardSize; j += 1) {
                 row.push(this.renderSquare(i * boardSize + j));
             }
-            board.push(<div key={i} className='board-row'>{row}</div>);
+            board.push(
+                <div
+                    key={i}
+                    className={`board-row${this.props.lightOn ? '--Light-Mode' : ''}`}>
+                    {row}
+                </div>
+            );
         }
 
         return (
@@ -122,11 +132,24 @@ export default class Game extends React.Component {
         }
 
         return (
-            <div className="Background">
+            <div className={`Background${this.props.lightOn ? '--Light-Mode' : ''}`}>
                 <div className="Overlay">
                     <div className="game">
+                        <button
+                            title="Toggle dark mode"
+                            className="DarkMode-btn"
+                            onClick={this.props.onToggleLightMode}
+                            aria-label="toggle dark mode">
+                            <FontAwesomeIcon
+                                icon={faAdjust}
+                                style={{ color: `${this.props.lightOn ? '#293AD9' : '#29D9B9'}` }}
+                            />
+                        </button>
                         <Link className="Link" to={'/projects'}>
-                            Back
+                            <FontAwesomeIcon
+                                icon={faArrowLeft}
+                                style={{ color: `${this.props.lightOn ? '#293AD9' : '#29D9B9'}` }}
+                            />
                         </Link>
                         <div className="game-wrapper-left">
                             <div className="game-board">
@@ -134,6 +157,7 @@ export default class Game extends React.Component {
                                     squares={current.squares}
                                     onClick={(i) => this.handleClick(i)}
                                     winLine={winInfo.line}
+                                    lightOn={this.props.lightOn}
                                 />
                             </div>
                         </div>

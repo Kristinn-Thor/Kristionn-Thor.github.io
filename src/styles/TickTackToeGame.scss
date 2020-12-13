@@ -84,6 +84,10 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    
+    & button {
+      cursor: pointer;
+    }
   }
 
   &-info li {
@@ -105,17 +109,33 @@
   .board-row{
     height: 33.334%;
     width: 100%;
-    border-bottom: 2px solid  $Light-Color;
-  }
+    border-bottom: 4px solid  $Light-Color;
+  
+    &:after {
+      clear: both;
+      content: "";
+      display: block;
+    }
 
-  .board-row:after {
-    clear: both;
-    content: "";
-    display: block;
-  }
+    &:last-child {
+      border-bottom: none;
+    }
 
-  .board-row:last-child {
-    border-bottom: none;
+    &--Light-Mode{
+      height: 33.334%;
+      width: 100%;
+      border-bottom: 4px solid  $Dark-Color;
+
+      &:after {
+        clear: both;
+        content: "";
+        display: block;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
   }
   
   .square {
@@ -132,11 +152,32 @@
     @media (min-width: 700px){
       font-size: 2.5em;
     }
-  }
+  
+    &:nth-child(2){
+      border-left: 4px solid  $Light-Color;
+      border-right: 4px solid  $Light-Color;
+    }
 
-  .square:nth-child(2){
-    border-left: 2px solid  $Light-Color;
-    border-right: 2px solid  $Light-Color;
+    &--Light-Mode{
+      background:transparent;
+      color: $Theme-ColorGreen;
+      border: none;
+      float: left;
+      font-size: 1.5em;
+      font-weight: bold;
+      height: 100%;
+      width: 33.334%;
+      text-align: center;
+      cursor: pointer;
+      @media (min-width: 700px){
+        font-size: 2.5em;
+      }
+  
+    &:nth-child(2){
+      border-left: 4px solid  $Dark-Color;
+      border-right: 4px solid  $Dark-Color;
+    }
+    }
   }
 
   .lumenate{
