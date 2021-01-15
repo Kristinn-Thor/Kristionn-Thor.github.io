@@ -14,7 +14,7 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
 const routes = [
-  { path: "/cv", exact: true, name: "Home", component: Home },
+  { path: "cv", exact: true, name: "Home", component: Home },
   { path: "/projects", exact: false, name: "Projects", component: Projects },
   { path: "/skils", exact: false, name: "Skils", component: Skils },
   { path: "/contact", exact: false, name: "Contact", component: Contact },
