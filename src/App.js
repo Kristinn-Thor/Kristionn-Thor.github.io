@@ -14,11 +14,11 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
 const routes = [
-  { path: "/", exact: true, name: "Home", component: Home },
-  { path: "/projects", exact: false, name: "Projects", component: Projects },
-  { path: "/skils", exact: false, name: "Skils", component: Skils },
-  { path: "/contact", exact: false, name: "Contact", component: Contact },
-  { path: "/about", exact: false, name: "About", component: About }
+  { path: "/cv", exact: true, name: "Home", component: Home },
+  { path: "/cv/projects", exact: false, name: "Projects", component: Projects },
+  { path: "/cv/skils", exact: false, name: "Skils", component: Skils },
+  { path: "/cv/contact", exact: false, name: "Contact", component: Contact },
+  { path: "/cv/about", exact: false, name: "About", component: About }
 ];
 
 function App() {
