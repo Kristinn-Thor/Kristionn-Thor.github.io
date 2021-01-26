@@ -17,14 +17,14 @@ Síðan uppfærist við breytingar.\
 ### `npm test`
 
 Keyrir upp prófunarham.\
-Sjá: [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Sjá: [running tests](https://facebook.github.io/create-react-app/docs/running-tests).
 
 ### `npm run build`
 
 Setur "appið" saman í `build` skránna, gerir "appið" klárt fyrir útgáfu.\
 React sett saman á sem hagkvæmastan hátt til þess að hámarka afköst fyrir útgáfu.
 
-Sjá: [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Sjá: [deployment](https://facebook.github.io/create-react-app/docs/deployment).
 
 ### `npm run eject`
 
