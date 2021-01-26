@@ -58,7 +58,6 @@
 
     &:focus {
       outline: none;
-      transform: scale(1.5);
     }
   }
 
@@ -74,6 +73,12 @@
     width: 8vw;
     min-width: 50px;
     max-width: 100px;
+  }
+
+  &-HomeScale {
+    &:hover, &:focus{
+      transform: scale(1.2);
+    }
   }
   
   &-Projects {

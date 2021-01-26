@@ -2,19 +2,16 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 97vw;
-    height: 83vh;
+    width: 100%;
+    height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
 
     &-Container {
         display: grid;
         color: white;
-        margin-top: 10vh;
-        margin-left: 10%;
-        margin-right: 10%;
-        height: 65vh;
+        margin: 10vh 10% 25% 10%;
         
-
         &-Header {
             font-size: 2em;
             color: #29D9B9;

@@ -21,8 +21,8 @@ function About({ lightOn, onToggleLightMode }) {
                 <div
                     className="Mask"
                     ref={el => { maskRef = el }}>
-
                 </div>
+                <div className="List-Mask"></div>
                 <div className="About">
                     <button
                         title="Toggle dark mode"

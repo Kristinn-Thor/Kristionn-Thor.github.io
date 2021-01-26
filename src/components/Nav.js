@@ -33,7 +33,7 @@ function Nav({ lightOn }) {
                         style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }} />
                 </NavLink>
                 <NavLink
-                    className="Nav-HomeBtn Nav-Link"
+                    className="Nav-HomeBtn Nav-Link Nav-HomeScale"
                     exact to="/"
                     activeClassName="selected">
                     <img src={HomeButton} alt="Heim" />
