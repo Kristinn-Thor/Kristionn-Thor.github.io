@@ -3,7 +3,7 @@
 Þessi heimasíða er búin til með [Create React App](https://github.com/facebook/create-react-app).
 
 
-## "Scripts" sem hægt er að keyra
+## "Scripts"
 
 Þú getur keyrt eftirfarandi "scriptur" úr verkefnaskránni:
 
@@ -16,18 +16,15 @@ Síðan uppfærist við breytingar.\
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Keyrir upp prófunarham.\
+Sjá: [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Setur "appið" saman í `build` skránna, gerir "appið" klárt fyrir útgáfu.\
+React sett saman á sem hagkvæmastan hátt til þess að hámarka afköst fyrir útgáfu.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Sjá: [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
 
