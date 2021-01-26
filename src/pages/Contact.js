@@ -31,7 +31,6 @@ function Contact({ lightOn, onToggleLightMode }) {
     return (
         <>
             <div className={`Background${lightOn ? '--Light-Mode' : ''}`}>
-                <div className="Overlay">
                     <div className="Mask" ref={el => { maskRef = el }}></div>
                     <div className="Contact">
                         <button
@@ -70,7 +69,6 @@ function Contact({ lightOn, onToggleLightMode }) {
                             </li>
                         </ul>
                     </div>
-                </div>
             </div>
         </>
     );

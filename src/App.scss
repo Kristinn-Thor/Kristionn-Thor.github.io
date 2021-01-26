@@ -52,24 +52,11 @@
       color: black;
     }
 
-    & .Overlay {
-      background-color:$Overlay-Color--LM;
-    }
-
     & .Mask {
       background: linear-gradient(45deg, $Theme-ColorGreen--LM, $Theme-ColorBlue--LM);
     }
 
    }
- }
-
- .Overlay {
-  position: relative;
-  width: 97%;
-  height: 97%;
-  background-color: $Overlay-Color;
-  border-radius: 30px;
-  overflow-x: hidden;
  }
 
  .Mask {

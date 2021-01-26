@@ -54,8 +54,8 @@ function Projects({ lightOn, onToggleLightMode }) {
         return (
             <>
                 <div className={`Background${lightOn ? '--Light-Mode' : ''}`}>
-                    <div className="Overlay">
                         <div className="Mask" ref={el => { maskRef = el }}></div>
+                        <div className="List-Mask"></div>
                         <div className="Projects">
                             <button
                                 title="Toggle dark mode"
@@ -119,7 +119,6 @@ function Projects({ lightOn, onToggleLightMode }) {
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </>
         );

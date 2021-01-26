@@ -28,7 +28,6 @@ function Skils({ lightOn, onToggleLightMode }) {
     return (
         <>
             <div className={`Background${lightOn ? '--Light-Mode' : ''}`}>
-                <div className="Overlay">
                     <div className="Mask" ref={el => { maskRef = el }}></div>
                     <div className="Skils">
                         <button
@@ -105,7 +104,6 @@ function Skils({ lightOn, onToggleLightMode }) {
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </>
     );

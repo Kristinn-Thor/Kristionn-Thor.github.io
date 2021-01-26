@@ -21,7 +21,6 @@ function Home({ lightOn, onToggleLightMode }) {
     return (
         <>
             <div className={`Background${lightOn ? '--Light-Mode' : ''}`}>
-                <div className="Overlay">
                     <div
                         className="Mask"
                         ref={el => { maskRef = el }}></div>
@@ -51,7 +50,6 @@ function Home({ lightOn, onToggleLightMode }) {
                             </p>
                         </section>
                     </div>
-                </div>
             </div>
         </>
     );
