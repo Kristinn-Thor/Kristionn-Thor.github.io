@@ -14,8 +14,7 @@ function Nav({ lightOn }) {
             <div className="Nav-Grid">
                 <NavLink
                     className="Nav-Projects Nav-Link"
-                    to="/projects"
-                    activeClassName="selected" >
+                    to="/projects" >
                     <FontAwesomeIcon
                         icon={faTasks}
                         className="Nav-Link-icon"
@@ -24,8 +23,7 @@ function Nav({ lightOn }) {
                 </NavLink>
                 <NavLink
                     className="Nav-Skills Nav-Link"
-                    to="/skils"
-                    activeClassName="selected">
+                    to="/skils" >
                     <FontAwesomeIcon
                         icon={faChartBar}
                         className="Nav-Link-icon"
@@ -34,14 +32,12 @@ function Nav({ lightOn }) {
                 </NavLink>
                 <NavLink
                     className="Nav-HomeBtn Nav-Link Nav-HomeScale"
-                    exact to="/"
-                    activeClassName="selected">
+                    exact to="/" >
                     <img src={HomeButton} alt="Heim" />
                 </NavLink>
                 <NavLink
                     className="Nav-Contact Nav-Link"
-                    to="/contact"
-                    activeClassName="selected">
+                    to="/contact" >
                     <FontAwesomeIcon
                         icon={faAt}
                         className="Nav-Link-icon"
@@ -50,8 +46,7 @@ function Nav({ lightOn }) {
                 </NavLink>
                 <NavLink
                     className="Nav-About Nav-Link"
-                    to="/about"
-                    activeClassName="selected">
+                    to="/about" >
                     <FontAwesomeIcon
                         icon={faAddressCard}
                         className="Nav-Link-icon"

@@ -48,16 +48,11 @@
     text-decoration: none;
     color: #FFF;
     z-index: 1;
-    filter: blur(1px);
     cursor: pointer;
     transition: all .2s ease-in-out;
 
     &:hover, &:focus {
       transform: scale(1.5);
-    }
-
-    &:focus {
-      outline: none;
     }
   }
 
@@ -97,10 +92,6 @@
     grid-area: about;
   }
 
-}
-
-.selected {
-  filter: none;
 }
 
 
