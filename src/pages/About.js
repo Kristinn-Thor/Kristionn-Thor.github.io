@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import { useState } from 'react';
 import { TweenMax } from 'gsap';
 import '../styles/About.scss';
 //-----Font Awesome Imports-----//
@@ -6,14 +7,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 
 function About({ lightOn, onToggleLightMode }) {
-    useEffect(() => {
+
+    const [topPosition, setTopPosition] = useState(0);
+    const [maskHeight, setMaskHeight] = useState(0);
+
+    useLayoutEffect(() => {
         TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
         TweenMax.staggerTo(textRef.current, 2, { opacity: '1' }, 0.2);
-    }, []);
+        
+        const containerHeight = aboutRef.current.clientHeight;
+        console.info('containerHeight: ', containerHeight);
+        const maskHeight = listMaskRef.current.clientHeight;
+        console.info('maskHeight: ', maskHeight);
+        const position = containerHeight - maskHeight;
+        console.info('position: ', position);
+        setTopPosition(position);
+        setMaskHeight(maskHeight);
+        console.info('topPosition: ', topPosition);
+
+    }, [topPosition]);
 
     let maskRef = useRef(null);
     let textRef = useRef([]);
     const textStyle = { opacity: '0', overflow: 'visible' };
+
+    let listMaskRef = useRef(null);
+    let aboutRef = useRef(null);
+    
 
     return (
         <>
@@ -22,8 +42,9 @@ function About({ lightOn, onToggleLightMode }) {
                     className="Mask"
                     ref={el => { maskRef = el }}>
                 </div>
-                <div className="List-Mask"></div>
-                <div className="About">
+
+                <div className="About" ref={aboutRef}>
+                    <div className="List-Mask" ref={listMaskRef} style={{top: topPosition}}></div>
                     <button
                         title="Toggle dark mode"
                         className="DarkMode-btn"
@@ -34,7 +55,7 @@ function About({ lightOn, onToggleLightMode }) {
                             style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
                         </FontAwesomeIcon>
                     </button>
-                    <div className="About-Container">
+                    <div className="About-Container" style={{top: -maskHeight}}>
                         <h1
                             className="About-Container-Header h1"
                             ref={el => { textRef.current[0] = el }}
