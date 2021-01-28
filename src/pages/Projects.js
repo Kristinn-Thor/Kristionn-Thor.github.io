@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
     Switch,
     Route,
@@ -17,6 +17,7 @@ import { random } from 'gsap/gsap-core';
 
 
 function Projects({ lightOn, onToggleLightMode }) {
+    const [maskPosition, setMaskPosition] = useState(0);
     let match = useRouteMatch();
     let maskRef = useRef(null);
     let linkRef = useRef([]);
@@ -55,8 +56,8 @@ function Projects({ lightOn, onToggleLightMode }) {
             <>
                 <div className={`Background${lightOn ? '--Light-Mode' : ''}`}>
                         <div className="Mask" ref={el => { maskRef = el }}></div>
-                        <div className="List-Mask"></div>
-                        <div className="Projects">
+                        <div className="Projects" onScroll={e => setMaskPosition(e.target.scrollTop)}>
+                        <div className="List-Mask" style={{bottom: -maskPosition}}></div>
                             <button
                                 title="Toggle dark mode"
                                 className="DarkMode-btn"

@@ -41,6 +41,7 @@ function App() {
           ))}
         </Switch>
         <Nav lightOn={lightMode} />
+        <div className={`${lightMode ? "Fade--Light-Mode" : "Fade"}`}></div>
       </div>
     </Router>
   );
