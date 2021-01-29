@@ -29,7 +29,7 @@ function App() {
 }
 
   return (
-    <Router basename="/cv">
+    <Router>
       <div className="App">
         <Switch>
           {routes.map(({ path, exact, component: C }, index) => (
