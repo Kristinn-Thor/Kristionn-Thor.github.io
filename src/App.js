@@ -1,6 +1,6 @@
 //-----React Import-----//
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { useState } from 'react';
 //-----Style Import-----//
 import './App.scss';
