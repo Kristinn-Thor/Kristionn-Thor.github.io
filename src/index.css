@@ -9,6 +9,9 @@
   html, body {
     touch-action: none;
     -ms-touch-action: none;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
   }
   
   body {
