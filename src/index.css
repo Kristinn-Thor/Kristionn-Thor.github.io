@@ -5,15 +5,17 @@
     padding: 0;
     box-sizing: border-box;
   }
-  /*
+  
   html, body {
+    /*
     touch-action: none;
-    -ms-touch-action: none;
+    -ms-touch-action: none; 
+    */
     overflow: hidden;
-    position: relative;
+    position: fixed;
     height: 100%;
   }
-  */
+  
   body {
     font-family: 'Saira', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
