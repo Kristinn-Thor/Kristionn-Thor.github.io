@@ -30,15 +30,15 @@ function App() {
   }
 
   useEffect(() => {
-    gsap.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
+    // gsap.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
 }, [lightMode]);
 
 let maskRef = useRef(null);
-
+// <div className="Mask" ref={el => { maskRef = el }}></div>
   return (
     <Router>
       <div className={`App${lightMode ? '--Light-Mode' : ''}`}>
-      <div className="Mask" ref={el => { maskRef = el }}></div>
+      
         <Switch>
           {routes.map(({ path, exact, component: C }, index) => (
             <Route
