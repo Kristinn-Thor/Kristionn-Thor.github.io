@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
     Switch,
     Route,
@@ -17,11 +17,9 @@ import { random } from 'gsap/gsap-core';
 
 
 function Projects({ lightOn, onToggleLightMode }) {
-    const [maskPosition, setMaskPosition] = useState(0);
-    let match = useRouteMatch();
-    let maskRef = useRef(null);
-    let linkRef = useRef([]);
 
+    let match = useRouteMatch();
+    let linkRef = useRef([]);
 
     const handleMouseEnter = (e) => {
         e.currentTarget.style.transition = 'none';
@@ -41,7 +39,6 @@ function Projects({ lightOn, onToggleLightMode }) {
 
     useEffect(() => {
         if (match.isExact) { // Only play tween if we render /projects exact page
-            gsap.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
             gsap.timeline()
                 .fromTo(linkRef.current[0], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
                 .fromTo(linkRef.current[1], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
@@ -53,11 +50,7 @@ function Projects({ lightOn, onToggleLightMode }) {
 
     if (match.isExact)
         return (
-            <>
-                <div className={`Background${lightOn ? '--Light-Mode' : ''}`}>
-                        <div className="Mask" ref={el => { maskRef = el }}></div>
-                        <div className="Projects" onScroll={e => setMaskPosition(e.target.scrollTop)}>
-                        <div className="List-Mask" style={{bottom: -maskPosition}}></div>
+                        <div className="Projects">
                             <button
                                 title="Toggle dark mode"
                                 className="DarkMode-btn"
@@ -120,8 +113,6 @@ function Projects({ lightOn, onToggleLightMode }) {
                                 </div>
                             </div>
                         </div>
-                </div>
-            </>
         );
     return (
         <>

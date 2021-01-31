@@ -1,16 +1,13 @@
 .Contact {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 97vw;
-    height: 97vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     
     
     &-Title {
         color: #29D9B9;
-        margin: 100px 0 50px 10%;
+        margin: 15% 0 50px 10%;
 
         @media (max-width: 300px) {
             margin: 100px auto 50px auto;

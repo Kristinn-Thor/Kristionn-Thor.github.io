@@ -1,7 +1,8 @@
 //-----React Import-----//
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { useState } from 'react';
+import { gsap } from 'gsap';
 //-----Style Import-----//
 import './App.scss';
 //-----Component Import-----//
@@ -26,11 +27,18 @@ function App() {
 
   const toggleLightMode = () => {
     setLightMode(!lightMode);
-}
+  }
+
+  useEffect(() => {
+    gsap.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
+}, [lightMode]);
+
+let maskRef = useRef(null);
 
   return (
     <Router>
-      <div className="App">
+      <div className={`App${lightMode ? '--Light-Mode' : ''}`}>
+      <div className="Mask" ref={el => { maskRef = el }}></div>
         <Switch>
           {routes.map(({ path, exact, component: C }, index) => (
             <Route
@@ -40,8 +48,9 @@ function App() {
               render={(props) => <C {...props} lightOn={lightMode} onToggleLightMode={toggleLightMode} />} />
           ))}
         </Switch>
-        <Nav lightOn={lightMode} />
-        <div className={`${lightMode ? "Fade--Light-Mode" : "Fade"}`}></div>
+        <footer className={`${lightMode ? "Fade--Light-Mode" : "Fade"}`}>
+          <Nav lightOn={lightMode} />
+        </footer>
       </div>
     </Router>
   );

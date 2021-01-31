@@ -7,7 +7,6 @@ import { faAdjust, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons
 
 function Contact({ lightOn, onToggleLightMode }) {
     useEffect(() => {
-        TweenMax.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
         TweenMax.staggerFromTo(
             textRef.current,
             0.6, // Duration
@@ -23,15 +22,11 @@ function Contact({ lightOn, onToggleLightMode }) {
             0.1 // Stagger time
         );
     }, []);
-
-    let maskRef = useRef(null);
+    
     let textRef = useRef([]);
     const textStyle = { opacity: 0 };
 
     return (
-        <>
-            <div className={`Background${lightOn ? '--Light-Mode' : ''}`}>
-                    <div className="Mask" ref={el => { maskRef = el }}></div>
                     <div className="Contact">
                         <button
                             title="Toggle dark mode"
@@ -69,8 +64,6 @@ function Contact({ lightOn, onToggleLightMode }) {
                             </li>
                         </ul>
                     </div>
-            </div>
-        </>
     );
 }
 
