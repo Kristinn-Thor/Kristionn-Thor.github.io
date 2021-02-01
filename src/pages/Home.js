@@ -11,7 +11,7 @@ import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 
 function Home({ lightOn, onToggleLightMode }) {
     useEffect(() => {
-        gsap.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
+        gsap.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', opacity: 1, duration: 1 });
         TweenMax.staggerTo(textRef.current, 2, { opacity: 1 }, 0.3);
     }, []);
 
@@ -21,18 +21,19 @@ function Home({ lightOn, onToggleLightMode }) {
 
     return (
         <div className="Home">
+            
             <div className="Mask" ref={el => { maskRef = el }}></div>
-                <button
-                    title="Toggle dark mode"
-                    className="DarkMode-btn"
-                    onClick={onToggleLightMode}
-                    aria-label="toggle dark mode">
-                    <FontAwesomeIcon
-                        icon={faAdjust}
-                        style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
-                    </FontAwesomeIcon>
-                </button>
-                <section className="Home-Section">
+            <button
+                title="Toggle dark mode"
+                className="DarkMode-btn"
+                onClick={onToggleLightMode}
+                aria-label="toggle dark mode">
+                <FontAwesomeIcon
+                    icon={faAdjust}
+                    style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
+                </FontAwesomeIcon>
+            </button>
+            <section className="Home-Section">
                 <h1
                     className="Home-Section-Title"
                     ref={el => { textRef.current[0] = el }}
@@ -44,7 +45,7 @@ function Home({ lightOn, onToggleLightMode }) {
                     style={textStyle}
                 >
                     Velkominn á heimasíðuna mína. Hér má finna upplýsingar um mig, það sem ég kann og nokkur verkefni tengd vefforritunun sem ég hef lokið.
-                            </p>
+                </p>
             </section>
         </div>
     );
