@@ -5,12 +5,8 @@
    transition: background-color .5s ease;
 
   &--Light-Mode {
-    width: 100vw;
-    height: 100vh;
     background-color: $Light-Color;
     transition: background-color .5s ease;
-    overflow-y: auto;
-    overflow-x: hidden;
 
     & h1 {
       color: $Theme-ColorBlue;

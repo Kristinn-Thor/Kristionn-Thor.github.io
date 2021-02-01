@@ -1,10 +1,8 @@
 @import 'Variables';
 .Nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "projects skills home contact about";
+  display: flex;
   align-items: center;
-  justify-items: center;
+  justify-content: space-around;
   background-color: $Effect-Color;
   width: 80%;
   height: 8vw;
@@ -16,11 +14,12 @@
   z-index: 0;
 
   &--Light-Mode {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "projects skills home contact about";
+    //display: grid;
+    //grid-template-columns: repeat(5, 1fr);
+    //grid-template-areas: "projects skills home contact about";
+    display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: space-around;
     background-color: $Effect-Color-LM;
     width: 80%;
     height: 8vw;
@@ -60,22 +59,6 @@
     width: 8vw;
     min-width: 50px;
     max-width: 80px;
-  }
-  
-  &-Projects {
-    grid-area: projects;
-  }
-  
-  &-Skills {
-    grid-area: skills;
-  }
-  
-  &-Contact {
-    grid-area: contact;
-  }
-  
-  &-About {
-    grid-area: about;
   }
 
 }
