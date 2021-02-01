@@ -1,13 +1,13 @@
 @import './Variables.scss';
 .About {
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
     &-Container {
         position: relative;
         display: grid;
         color: white;
-        margin: 15% 10% 15% 10%;
+        padding: 100px 10% 15% 10%;
 
         &-Header {
             font-size: 2em;

@@ -50,69 +50,69 @@ function Projects({ lightOn, onToggleLightMode }) {
 
     if (match.isExact)
         return (
-                        <div className="Projects">
-                            <button
-                                title="Toggle dark mode"
-                                className="DarkMode-btn"
-                                onClick={onToggleLightMode}
-                                aria-label="toggle dark mode">
-                                <FontAwesomeIcon
-                                    icon={faAdjust}
-                                    style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
-                                </FontAwesomeIcon>
-                            </button>
-                            <div className="Projects-Container">
-                                <h1 className="Projects-Title h1">Verkefni</h1>
-                                <div className="Projects-List">
-                                    <Link
-                                        className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
-                                        ref={el => { linkRef.current[0] = el }}
-                                        style={{ opacity: '0' }}
-                                        onMouseMove={handleMouseMove}
-                                        onMouseEnter={handleMouseEnter}
-                                        onMouseLeave={handleMouseLeave}
-                                        to={`${match.url}/game`} >
-                                        <FontAwesomeIcon icon={faGamepad} style={{ fontSize: '5em' }} />
-                                    </Link>
-                                    <div
-                                        className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
-                                        ref={el => { linkRef.current[1] = el }}
-                                        style={{ opacity: '0' }}
-                                        onMouseMove={handleMouseMove}
-                                        onMouseEnter={handleMouseEnter}
-                                        onMouseLeave={handleMouseLeave} >
-                                        Verkefni 2
+            <div className="Projects">
+                <button
+                    title="Toggle dark mode"
+                    className="DarkMode-btn"
+                    onClick={onToggleLightMode}
+                    aria-label="toggle dark mode">
+                    <FontAwesomeIcon
+                        icon={faAdjust}
+                        style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
+                    </FontAwesomeIcon>
+                </button>
+                <div className="Projects-Container">
+                    <h1 className="Projects-Title h1">Verkefni</h1>
+                    <div className="Projects-List">
+                        <Link
+                            className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                            ref={el => { linkRef.current[0] = el }}
+                            style={{ opacity: '0' }}
+                            onMouseMove={handleMouseMove}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                            to={`${match.url}/game`} >
+                            <FontAwesomeIcon icon={faGamepad} style={{ fontSize: '5em' }} />
+                        </Link>
+                        <div
+                            className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                            ref={el => { linkRef.current[1] = el }}
+                            style={{ opacity: '0' }}
+                            onMouseMove={handleMouseMove}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave} >
+                            Verkefni 2
                                     </div>
-                                    <div
-                                        className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
-                                        ref={el => { linkRef.current[2] = el }}
-                                        style={{ opacity: '0' }}
-                                        onMouseMove={handleMouseMove}
-                                        onMouseEnter={handleMouseEnter}
-                                        onMouseLeave={handleMouseLeave} >
-                                        Verkefni 3
+                        <div
+                            className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                            ref={el => { linkRef.current[2] = el }}
+                            style={{ opacity: '0' }}
+                            onMouseMove={handleMouseMove}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave} >
+                            Verkefni 3
                                     </div>
-                                    <div
-                                        className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
-                                        ref={el => { linkRef.current[3] = el }}
-                                        style={{ opacity: '0' }}
-                                        onMouseMove={handleMouseMove}
-                                        onMouseEnter={handleMouseEnter}
-                                        onMouseLeave={handleMouseLeave} >
-                                        Verkefni 4
+                        <div
+                            className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                            ref={el => { linkRef.current[3] = el }}
+                            style={{ opacity: '0' }}
+                            onMouseMove={handleMouseMove}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave} >
+                            Verkefni 4
                                     </div>
-                                    <div
-                                        className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
-                                        ref={el => { linkRef.current[4] = el }}
-                                        style={{ opacity: '0' }}
-                                        onMouseMove={handleMouseMove}
-                                        onMouseEnter={handleMouseEnter}
-                                        onMouseLeave={handleMouseLeave} >
-                                        Verkefni 5
+                        <div
+                            className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                            ref={el => { linkRef.current[4] = el }}
+                            style={{ opacity: '0' }}
+                            onMouseMove={handleMouseMove}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave} >
+                            Verkefni 5
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+            </div>
         );
     return (
         <>

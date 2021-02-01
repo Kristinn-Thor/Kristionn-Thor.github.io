@@ -1,25 +1,26 @@
 @import 'Variables';
 .Nav {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "projects skills home contact about";
+  align-items: center;
+  justify-items: center;
+  background-color: $Effect-Color;
+  width: 80%;
+  height: 8vw;
+  min-width: 270px;
+  max-width: 70%;
+  min-height: 50px;
+  max-height: 80px;
+  border-radius: 50px;
+  z-index: 0;
 
-  &-Effect {
-    position: absolute;
-    background-color: $Effect-Color;
-    width: 80%;
-    min-width: 270px;
-    min-height: 50px;
-    max-height: 80px;
-    min-width: 280px;
-    border-radius: 50px;
-    z-index: 0;
-  }
-
-  &-Effect--Light-Mode {
-    position: absolute;
+  &--Light-Mode {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "projects skills . contact about";
+    align-items: center;
+    justify-items: center;
     background-color: $Effect-Color-LM;
     width: 80%;
     min-width: 270px;
@@ -28,18 +29,6 @@
     min-width: 280px;
     border-radius: 50px;
     z-index: 0;
-  }
-
-  &-Grid {
-    position: absolute;
-    top: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "projects skills . contact about";
-    align-items: center;
-    justify-items: center;
-    width: 100%;
-    height: 100%;
   }
 
   &-Link {
@@ -60,19 +49,16 @@
   }
 
   &-HomeBtn {
-    position: absolute;
+    grid-area: home;
+    &:hover, &:focus{
+      transform: scale(1.2);
+    }
   }
   
   &-HomeBtn img {
     width: 8vw;
     min-width: 50px;
     max-width: 80px;
-  }
-
-  &-HomeScale {
-    &:hover, &:focus{
-      transform: scale(1.2);
-    }
   }
   
   &-Projects {

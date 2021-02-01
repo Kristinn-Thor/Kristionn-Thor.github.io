@@ -35,8 +35,8 @@
  .DarkMode-btn {
     display: flex;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 4%;
+    top: 4%;
     cursor: pointer;
     z-index: 10;
     border: none;
@@ -71,27 +71,26 @@
  }
 
  .Fade {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  left: 0;
+  left: 6%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: calc(100% - 0px); // minus scrollbar width
+  width: 88%;
   min-height: 80px;
   height: 12%;
   background: linear-gradient(rgba(13, 22, 38, 0) 0%, rgba(13, 22, 38, 1) 50%);
 
   &--Light-Mode {
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    left: 0;
+    left: 6%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(100% - 0px); // minus scrollbar width
+    width: 88%;
     min-height: 80px;
-    height: 10%;
+    height: 12%;
     background: linear-gradient(rgba(253, 255, 252, 0) 0%, rgba(253, 255, 252, 1) 50%);
   }
 }
