@@ -11,7 +11,6 @@
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     background-color: #0d1626;
-    transition: background-color .5s ease;
   }
 
   img {

@@ -1,8 +1,7 @@
 //-----React Import-----//
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { useState } from 'react';
-import { gsap } from 'gsap';
 //-----Style Import-----//
 import './App.scss';
 //-----Component Import-----//
@@ -30,7 +29,6 @@ function App() {
   }
 
   useEffect(() => {
-    // gsap.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
     if(lightMode) {
       document.body.style.backgroundColor = '#fdfffc';
     } else {
@@ -38,12 +36,9 @@ function App() {
       }
 }, [lightMode]);
 
-let maskRef = useRef(null);
-// <div className="Mask" ref={el => { maskRef = el }}></div>
   return (
     <Router>
       <div className={`App${lightMode ? '--Light-Mode' : ''}`}>
-      
         <Switch>
           {routes.map(({ path, exact, component: C }, index) => (
             <Route

@@ -1,7 +1,7 @@
 @import './styles/Variables.scss';
  /*----------------------App-----------------------*/
 .App {
-   
+  
   &--Light-Mode {
 
     & h1 {
@@ -54,7 +54,7 @@
    mask-repeat: no-repeat;
    mask-position: center;
    mask-size: cover;
-   z-index: 0;
+   z-index: -1;
 }
 
 .Fade {
