@@ -18,15 +18,16 @@
   &--Light-Mode {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "projects skills . contact about";
+    grid-template-areas: "projects skills home contact about";
     align-items: center;
     justify-items: center;
     background-color: $Effect-Color-LM;
     width: 80%;
+    height: 8vw;
     min-width: 270px;
+    max-width: 70%;
     min-height: 50px;
     max-height: 80px;
-    min-width: 280px;
     border-radius: 50px;
     z-index: 0;
   }
