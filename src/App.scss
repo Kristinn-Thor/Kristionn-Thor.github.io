@@ -1,12 +1,8 @@
 @import './styles/Variables.scss';
  /*----------------------App-----------------------*/
 .App {
-   background-color: $Dark-Color;
-   transition: background-color .5s ease;
-
+   
   &--Light-Mode {
-    background-color: $Light-Color;
-    transition: background-color .5s ease;
 
     & h1 {
       color: $Theme-ColorBlue;

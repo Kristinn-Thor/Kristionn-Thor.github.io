@@ -31,6 +31,11 @@ function App() {
 
   useEffect(() => {
     // gsap.fromTo(maskRef, { x: '700', y: '-700' }, { x: '0', y: '0', duration: 1 });
+    if(lightMode) {
+      document.body.style.backgroundColor = '#fdfffc';
+    } else {
+      document.body.style.backgroundColor = '#0d1626';
+      }
 }, [lightMode]);
 
 let maskRef = useRef(null);
