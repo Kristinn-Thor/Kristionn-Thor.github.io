@@ -1,12 +1,8 @@
 @import './styles/Variables.scss';
  /*----------------------App-----------------------*/
 .App {
-   width: 100vw;
-   height: 100vh;
    background-color: $Dark-Color;
    transition: background-color .5s ease;
-   overflow-y: auto;
-   overflow-x: hidden;
 
   &--Light-Mode {
     width: 100vw;
@@ -70,7 +66,7 @@
 }
 
 .Fade {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 6%;
   display: flex;
