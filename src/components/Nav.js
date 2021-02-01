@@ -12,7 +12,7 @@ function Nav({ lightOn }) {
     return (
         <nav className={`Nav${lightOn ? '--Light-Mode' : ''}`}>
             <NavLink
-                className="Nav-Projects Nav-Link"
+                className="Nav-Link"
                 to="/projects" >
                 <FontAwesomeIcon
                     icon={faTasks}
@@ -21,7 +21,7 @@ function Nav({ lightOn }) {
                     style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }} />
             </NavLink>
             <NavLink
-                className="Nav-Skills Nav-Link"
+                className="Nav-Link"
                 to="/skils" >
                 <FontAwesomeIcon
                     icon={faChartBar}
@@ -35,7 +35,7 @@ function Nav({ lightOn }) {
                 <img src={HomeButton} alt="Heim" />
             </NavLink>
             <NavLink
-                className="Nav-Contact Nav-Link"
+                className="Nav-Link"
                 to="/contact" >
                 <FontAwesomeIcon
                     icon={faAt}
@@ -44,7 +44,7 @@ function Nav({ lightOn }) {
                     style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }} />
             </NavLink>
             <NavLink
-                className="Nav-About Nav-Link"
+                className="Nav-Link"
                 to="/about" >
                 <FontAwesomeIcon
                     icon={faAddressCard}

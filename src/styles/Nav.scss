@@ -14,9 +14,6 @@
   z-index: 0;
 
   &--Light-Mode {
-    //display: grid;
-    //grid-template-columns: repeat(5, 1fr);
-    //grid-template-areas: "projects skills home contact about";
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -49,7 +46,6 @@
   }
 
   &-HomeBtn {
-    grid-area: home;
     &:hover, &:focus{
       transform: scale(1.2);
     }
