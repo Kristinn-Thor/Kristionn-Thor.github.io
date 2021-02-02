@@ -4,41 +4,55 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  height: 85vh;
+  height: 100vh;
+
+  @media (min-width: 1000px) {
+    justify-content: space-around;
+  }
+
   @media (max-width: 600px){
     flex-direction: column;
   }
 
   &-wrapper-left {
-    height: 100%;
-    width: 50%;
+    height: 50vw;
+    width: 50vw;
+    max-height: 500px;
+    max-width: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 10px 0 10px;
+    
     @media (max-width: 600px){
       height: 50%;
       width: 100%;
+      padding: 0 10px 0 10px;
+      margin: 60px 0 60px 0;
     }
     @media (max-width: 400px){
-      height: 40%;
+      height: 45%;
       width: 100%;
+      padding: 0 10px 0 10px;
+      margin: 40px 0 20px 0;
     }
   }
 
   &-wrapper-right {
-    height: 100%;
-    width: 50%;
+    height: 50vw;
+    width: 50vw;
+    max-height: 500px;
+    max-width: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 20px;
+
     @media (max-width: 600px){
       height: 50%;
       width: 100%;
     }
     @media (max-width: 400px){
-      height: 60%;
+      height: 50%;
       width: 100%;
     }
   }
@@ -48,68 +62,63 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40vw;
-    height: 40vw;
-    margin-left: 10px;
-
-    @media (min-width: 1200px){
-      width: 30vw;
-      height: 30vw;
-    }
+    width: 100%;
+    height: 100%;
   }
 
   &-info {
     color: $Theme-ColorGreen;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 100%;
     height: 100%;
-    margin: 0 10px 0 10px;
-  }
 
-  &-info-status {
-    font-size: 1em;
-    font-weight: bold;
-    margin: 0 auto 20px auto;
-  }
-
-  &-info ol {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  &-info-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    
-    & button {
-      cursor: pointer;
+    & ol {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-  }
 
-  &-info li {
-    list-style: none;
-  }
-
-  &-info button {
-    font-size: .6em;
-    width: 8em;
-    margin: .6em;
-    padding: .5em;
-    color: $Theme-ColorGreen;
-    background-color: transparent;
-    border: solid $Theme-ColorGreen;
-    border-radius: 10px;
+    &-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      
+      & button {
+        cursor: pointer;
+      }
+    }
+    &-status {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      font-size: 1em;
+      font-weight: bold;
+      & .order {
+        width: 10em;
+        height: 4em;
+      }
+    }
+    & li {
+      list-style: none;
+    }
+    & button {
+      font-size: .5em;
+      width: 7em;
+      height: 5em;
+      margin: .4em;
+      color: $Theme-ColorGreen;
+      background-color: transparent;
+      border: solid $Theme-ColorGreen;
+      border-radius: 10px;
+    }
   }
 }
 
   .board-row{
     height: 33.334%;
     width: 100%;
-    border-bottom: 4px solid  $Light-Color;
+    border-bottom: 4px solid  $Board-DM;
   
     &:after {
       clear: both;
@@ -124,7 +133,7 @@
     &--Light-Mode{
       height: 33.334%;
       width: 100%;
-      border-bottom: 4px solid  $Dark-Color;
+      border-bottom: 4px solid  $Board-LM;
 
       &:after {
         clear: both;
@@ -154,13 +163,13 @@
     }
   
     &:nth-child(2){
-      border-left: 4px solid  $Light-Color;
-      border-right: 4px solid  $Light-Color;
+      border-left: 4px solid  $Board-DM;
+      border-right: 4px solid  $Board-DM;
     }
 
     &--Light-Mode{
       background:transparent;
-      color: $Theme-ColorGreen;
+      color: $Theme-ColorBlue;
       border: none;
       float: left;
       font-size: 1.5em;
@@ -174,14 +183,14 @@
       }
   
     &:nth-child(2){
-      border-left: 4px solid  $Dark-Color;
-      border-right: 4px solid  $Dark-Color;
+      border-left: 4px solid  $Board-LM;
+      border-right: 4px solid  $Board-LM;
     }
     }
   }
 
   .lumenate{
-    color: rgb(252, 123, 235);
+    color: #fc7beb;
   }
   
   .square:focus {

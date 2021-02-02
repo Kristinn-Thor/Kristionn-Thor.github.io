@@ -50,7 +50,7 @@ function Contact({ lightOn, onToggleLightMode }) {
                     style={textStyle}>
                     <FontAwesomeIcon
                         icon={faEnvelope}
-                        style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}
+                        style={{ color: `${lightOn ? '#5562DD' : '#29D9B9'}` }}
                         className="icon icon-contact" />
                                 kristinn713@gmail.com
                             </li>
@@ -59,7 +59,7 @@ function Contact({ lightOn, onToggleLightMode }) {
                     style={textStyle}>
                     <FontAwesomeIcon
                         icon={faPhone}
-                        style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}
+                        style={{ color: `${lightOn ? '#5562DD' : '#29D9B9'}` }}
                         className="icon icon-contact" />
                                 691-3314
                             </li>

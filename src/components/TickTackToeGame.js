@@ -3,7 +3,7 @@ import '../styles/TickTackToeGame.scss';
 import { Link } from 'react-router-dom';
 //-----Font Awesome Imports-----//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faAdjust } from '@fortawesome/free-solid-svg-icons';
+import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 
 function Square(props) {
     const className = 'square' + (props.lightOn ? '--Light-Mode' : '');
@@ -114,6 +114,7 @@ export default class Game extends React.Component {
                     <button
                         className='go-to-move'
                         onClick={() => this.jumpTo(move)}
+                        style={this.props.lightOn ? { color: '#5562DD', border: 'solid', borderColor: '#5562DD' } : {}}
                     >
                         {desc}</button>
                 </li>
@@ -132,51 +133,47 @@ export default class Game extends React.Component {
         }
 
         return (
-            <div className={`Background${this.props.lightOn ? '--Light-Mode' : ''}`}>
-                <div className="Overlay">
-                    <div className="game">
-                        <button
-                            title="Toggle dark mode"
-                            className="DarkMode-btn"
-                            onClick={this.props.onToggleLightMode}
-                            aria-label="toggle dark mode">
-                            <FontAwesomeIcon
-                                icon={faAdjust}
-                                style={{ color: `${this.props.lightOn ? '#293AD9' : '#29D9B9'}` }}
-                            />
-                        </button>
-                        <Link className="Link" to={'/projects'}>
-                            <FontAwesomeIcon
-                                icon={faArrowLeft}
-                                style={{ color: `${this.props.lightOn ? '#293AD9' : '#29D9B9'}` }}
-                            />
-                        </Link>
-                        <div className="game-wrapper-left">
-                            <div className="game-board">
-                                <Board
-                                    squares={current.squares}
-                                    onClick={(i) => this.handleClick(i)}
-                                    winLine={winInfo.line}
-                                    lightOn={this.props.lightOn}
-                                />
-                            </div>
+
+            <div className="game">
+                <button
+                    title="Toggle dark mode"
+                    className="DarkMode-btn"
+                    onClick={this.props.onToggleLightMode}
+                    aria-label="toggle dark mode">
+                    <FontAwesomeIcon
+                        icon={faAdjust}
+                        style={{ color: `${this.props.lightOn ? '#5562DD' : '#29D9B9'}` }}
+                    />
+                </button>
+                <div className="game-wrapper-left">
+                    <div className="game-board">
+                        <Board
+                            squares={current.squares}
+                            onClick={(i) => this.handleClick(i)}
+                            winLine={winInfo.line}
+                            lightOn={this.props.lightOn}
+                        />
+                    </div>
+                </div>
+                <div className="game-wrapper-right">
+                    <div className="game-info">
+                        <div className="game-info-status"
+                            style={{ color: `${winner ? '#fc7beb' : `${this.props.lightOn ? '#5562DD' : '#29D9B9'}` }`}}>{status}
+                            <button
+                                className="order"
+                                style={this.props.lightOn ? { color: '#5562DD', border: 'solid', borderColor: '#5562DD' } : {}}
+                                onClick={() => this.handleMoveOrder()}
+                            >
+                                {this.state.isAscending ? 'Change to descending' : 'Chnage to ascending'}
+                            </button>
                         </div>
-                        <div className="game-wrapper-right">
-                            <div className="game-info">
-                                <div className={`game-info-status${winner ? ' lumenate' : ''}`}>{status}</div>
-                                <div className="game-info-buttons">
-                                    <ol>{moves}</ol>
-                                    <button
-                                        onClick={() => this.handleMoveOrder()}
-                                    >
-                                        {this.state.isAscending ? 'Change to descending' : 'Chnage to ascending'}
-                                    </button>
-                                </div>
-                            </div>
+                        <div className="game-info-buttons">
+                            <ol>{moves}</ol>
                         </div>
                     </div>
                 </div>
             </div>
+
         );
     }
 }
