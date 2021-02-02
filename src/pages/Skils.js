@@ -22,6 +22,7 @@ function Skils({ lightOn, onToggleLightMode }) {
 
     return (
         <div className="Skils">
+            <div className="Mask" style={ {opacity: 1, position: 'fixed', top:0} }></div>
             <button
                 title="Toggle dark mode"
                 className="DarkMode-btn"
@@ -29,7 +30,7 @@ function Skils({ lightOn, onToggleLightMode }) {
                 aria-label="toggle dark mode">
                 <FontAwesomeIcon
                     icon={faAdjust}
-                    style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
+                    style={{ color: `${lightOn ? '#5562DD' : '#29D9B9'}` }}>
                 </FontAwesomeIcon>
             </button>
             <h1 className="Skils-Title h1">Kunnátta</h1>

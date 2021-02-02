@@ -18,7 +18,7 @@ function Nav({ lightOn }) {
                     icon={faTasks}
                     className="Nav-Link-icon"
                     alt="Verkefnin"
-                    style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }} />
+                    style={{ color: `${lightOn ? '#5562DD' : '#29D9B9'}` }} />
             </NavLink>
             <NavLink
                 className="Nav-Link"
@@ -27,7 +27,7 @@ function Nav({ lightOn }) {
                     icon={faChartBar}
                     className="Nav-Link-icon"
                     alt="Hvað ég kann"
-                    style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }} />
+                    style={{ color: `${lightOn ? '#5562DD' : '#29D9B9'}` }} />
             </NavLink>
             <NavLink
                 className="Nav-HomeBtn Nav-Link"
@@ -41,7 +41,7 @@ function Nav({ lightOn }) {
                     icon={faAt}
                     className="Nav-Link-icon"
                     alt="Hafa samband"
-                    style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }} />
+                    style={{ color: `${lightOn ? '#5562DD' : '#29D9B9'}` }} />
             </NavLink>
             <NavLink
                 className="Nav-Link"
@@ -50,7 +50,7 @@ function Nav({ lightOn }) {
                     icon={faAddressCard}
                     className="Nav-Link-icon"
                     alt="Um mig"
-                    style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }} />
+                    style={{ color: `${lightOn ? '#5562DD' : '#29D9B9'}` }} />
             </NavLink>
         </nav>
     );

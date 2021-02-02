@@ -22,48 +22,49 @@ function Contact({ lightOn, onToggleLightMode }) {
             0.1 // Stagger time
         );
     }, []);
-    
+
     let textRef = useRef([]);
     const textStyle = { opacity: 0 };
 
     return (
-                    <div className="Contact">
-                        <button
-                            title="Toggle dark mode"
-                            className="DarkMode-btn"
-                            onClick={onToggleLightMode}
-                            aria-label="toggle dark mode">
-                            <FontAwesomeIcon
-                                icon={faAdjust}
-                                style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }} />
-                        </button>
-                        <h1
-                            className="Contact-Title h1"
-                            ref={el => { textRef.current[0] = el }}
-                            style={textStyle}>
-                            Vertu í bandi
+        <div className="Contact">
+            <div className="Mask" style={ {opacity: 1, position: 'fixed', top:0} }></div>
+            <button
+                title="Toggle dark mode"
+                className="DarkMode-btn"
+                onClick={onToggleLightMode}
+                aria-label="toggle dark mode">
+                <FontAwesomeIcon
+                    icon={faAdjust}
+                    style={{ color: `${lightOn ? '#5562DD' : '#29D9B9'}` }} />
+            </button>
+            <h1
+                className="Contact-Title h1"
+                ref={el => { textRef.current[0] = el }}
+                style={textStyle}>
+                Vertu í bandi
                         </h1>
-                        <ul className="Contact-Info">
-                            <li
-                                ref={el => { textRef.current[1] = el }}
-                                style={textStyle}>
-                                <FontAwesomeIcon 
-                                icon={faEnvelope}
-                                style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}
-                                className="icon icon-contact"/> 
+            <ul className="Contact-Info">
+                <li
+                    ref={el => { textRef.current[1] = el }}
+                    style={textStyle}>
+                    <FontAwesomeIcon
+                        icon={faEnvelope}
+                        style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}
+                        className="icon icon-contact" />
                                 kristinn713@gmail.com
                             </li>
-                            <li
-                                ref={el => { textRef.current[2] = el }}
-                                style={textStyle}>
-                                <FontAwesomeIcon 
-                                icon={faPhone}
-                                style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}
-                                className="icon icon-contact"/> 
+                <li
+                    ref={el => { textRef.current[2] = el }}
+                    style={textStyle}>
+                    <FontAwesomeIcon
+                        icon={faPhone}
+                        style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}
+                        className="icon icon-contact" />
                                 691-3314
                             </li>
-                        </ul>
-                    </div>
+            </ul>
+        </div>
     );
 }
 

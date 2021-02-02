@@ -21,7 +21,6 @@ function Home({ lightOn, onToggleLightMode }) {
 
     return (
         <div className="Home">
-            
             <div className="Mask" ref={el => { maskRef = el }}></div>
             <button
                 title="Toggle dark mode"
@@ -30,7 +29,7 @@ function Home({ lightOn, onToggleLightMode }) {
                 aria-label="toggle dark mode">
                 <FontAwesomeIcon
                     icon={faAdjust}
-                    style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
+                    style={{ color: `${lightOn ? '#5562DD' : '#29D9B9'}` }}>
                 </FontAwesomeIcon>
             </button>
             <section className="Home-Section">

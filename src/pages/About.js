@@ -16,6 +16,7 @@ function About({ lightOn, onToggleLightMode }) {
 
     return (
             <div className="About">
+                <div className="Mask" style={ {opacity: 1, position: 'fixed', top:0} }></div>
                 <button
                     title="Toggle dark mode"
                     className="DarkMode-btn"
@@ -23,7 +24,7 @@ function About({ lightOn, onToggleLightMode }) {
                     aria-label="toggle dark mode">
                     <FontAwesomeIcon
                         icon={faAdjust}
-                        style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
+                        style={{ color: `${lightOn ? '#5562DD' : '#29D9B9'}` }}>
                     </FontAwesomeIcon>
                 </button>
                 <div className="About-Container">

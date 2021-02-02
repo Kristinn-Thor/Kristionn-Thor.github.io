@@ -4,12 +4,13 @@
   align-items: center;
   justify-content: space-around;
   background-color: $Effect-Color;
-  width: 80%;
+  width: 100%;
   height: 8vw;
   min-width: 270px;
-  max-width: 70%;
+  max-width: 800px;
   min-height: 50px;
   max-height: 80px;
+  margin: 0 10px 0 10px;
   border-radius: 50px;
   z-index: 2;
 
@@ -18,12 +19,13 @@
     align-items: center;
     justify-content: space-around;
     background-color: $Effect-Color-LM;
-    width: 80%;
+    width: 100%;
     height: 8vw;
     min-width: 270px;
-    max-width: 70%;
+    max-width: 800px;
     min-height: 50px;
     max-height: 80px;
+    margin: 0 10px 0 10px;
     border-radius: 50px;
     z-index: 2;
   }
@@ -36,7 +38,7 @@
     cursor: pointer;
     transition: all .2s ease-in-out;
 
-    &:hover, &:focus {
+    &:hover {
       transform: scale(1.5);
     }
   }
@@ -46,15 +48,18 @@
   }
 
   &-HomeBtn {
-    &:hover, &:focus{
+    &:hover{
       transform: scale(1.2);
     }
   }
   
   &-HomeBtn img {
     width: 8vw;
+    height: 8vw;
     min-width: 50px;
     max-width: 80px;
+    min-height: 50px;
+    max-height: 80px;
   }
 
 }

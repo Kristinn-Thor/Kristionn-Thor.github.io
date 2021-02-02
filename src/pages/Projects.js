@@ -39,18 +39,26 @@ function Projects({ lightOn, onToggleLightMode }) {
 
     useEffect(() => {
         if (match.isExact) { // Only play tween if we render /projects exact page
-            gsap.timeline()
+            console.info(window.innerWidth);
+            if (window.innerWidth > 641){ // The effect makes no sense for mobile devices
+                gsap.timeline()
                 .fromTo(linkRef.current[0], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
                 .fromTo(linkRef.current[1], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
                 .fromTo(linkRef.current[2], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
                 .fromTo(linkRef.current[3], { yPercent: '-400' }, { yPercent: '0', opacity: 1, duration: 0.9, ease: 'back' }, random(0, 0.5))
                 .fromTo(linkRef.current[4], { yPercent: '-500' }, { yPercent: '0', opacity: 1, duration: 0.9, ease: 'back' }, random(0, 0.5));
+            } else {
+                linkRef.current.forEach(element => {
+                    element.style={ opacity: '1' };
+                });
+            }
         }
     }, [match.isExact]);
 
     if (match.isExact)
         return (
             <div className="Projects">
+                <div className="Mask" style={ {opacity: 1, position: 'fixed', top:0} }></div>
                 <button
                     title="Toggle dark mode"
                     className="DarkMode-btn"
@@ -58,7 +66,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                     aria-label="toggle dark mode">
                     <FontAwesomeIcon
                         icon={faAdjust}
-                        style={{ color: `${lightOn ? '#293AD9' : '#29D9B9'}` }}>
+                        style={{ color: `${lightOn ? '#5562DD' : '#29D9B9'}` }}>
                     </FontAwesomeIcon>
                 </button>
                 <div className="Projects-Container">

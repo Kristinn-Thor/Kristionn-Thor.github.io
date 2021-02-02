@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     if(lightMode) {
-      document.body.style.backgroundColor = '#fdfffc';
+      document.body.style.backgroundColor = '#F7FFF6';
     } else {
       document.body.style.backgroundColor = '#0d1626';
       }
