@@ -25,6 +25,7 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
+            font-weight: bold;
             color: $Theme-ColorGreen;
             background-color: $Effect-Color;
             min-height: 120px;
@@ -40,4 +41,16 @@
         }
     }
     
+}
+
+#p1 {
+    background-image: url(../img/tictactoe.png);
+    background-size: 100% 100%;
+    object-fit: contain;
+}
+
+#p2 {
+    background-image: url(../img/myndaalbum.png);
+    background-size: 100% 100%;
+    object-fit: contain;
 }

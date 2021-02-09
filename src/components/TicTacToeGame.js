@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/TickTackToeGame.scss';
+import '../styles/TicTacToeGame.scss';
 import { Link } from 'react-router-dom';
 //-----Font Awesome Imports-----//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

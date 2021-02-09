@@ -5,14 +5,14 @@ import {
     Link,
     useRouteMatch
 } from "react-router-dom";
-import Game from '../components/TickTackToeGame';
+import Game from '../components/TicTacToeGame';
 //-----GSAP-----//
 import { gsap } from 'gsap';
 //-----Styles-----//
 import '../styles/Projects.scss';
 //-----Font Awesome Imports-----//
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAdjust, faGamepad } from '@fortawesome/free-solid-svg-icons';
+import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 import { random } from 'gsap/gsap-core';
 
 
@@ -40,16 +40,16 @@ function Projects({ lightOn, onToggleLightMode }) {
     useEffect(() => {
         if (match.isExact) { // Only play tween if we render /projects exact page
             console.info(window.innerWidth);
-            if (window.innerWidth > 641){ // The effect makes no sense for mobile devices
+            if (window.innerWidth > 641) { // The effect makes no sense for mobile devices
                 gsap.timeline()
-                .fromTo(linkRef.current[0], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
-                .fromTo(linkRef.current[1], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
-                .fromTo(linkRef.current[2], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
-                .fromTo(linkRef.current[3], { yPercent: '-400' }, { yPercent: '0', opacity: 1, duration: 0.9, ease: 'back' }, random(0, 0.5))
-                .fromTo(linkRef.current[4], { yPercent: '-500' }, { yPercent: '0', opacity: 1, duration: 0.9, ease: 'back' }, random(0, 0.5));
+                    .fromTo(linkRef.current[0], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
+                    .fromTo(linkRef.current[1], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
+                    .fromTo(linkRef.current[2], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
+                    .fromTo(linkRef.current[3], { yPercent: '-400' }, { yPercent: '0', opacity: 1, duration: 0.9, ease: 'back' }, random(0, 0.5))
+                    .fromTo(linkRef.current[4], { yPercent: '-500' }, { yPercent: '0', opacity: 1, duration: 0.9, ease: 'back' }, random(0, 0.5));
             } else {
                 linkRef.current.forEach(element => {
-                    element.style={ opacity: '1' };
+                    element.style = { opacity: '1' };
                 });
             }
         }
@@ -58,7 +58,7 @@ function Projects({ lightOn, onToggleLightMode }) {
     if (match.isExact)
         return (
             <div className="Projects">
-                <div className="Mask" style={ {opacity: 1, position: 'fixed', top:0} }></div>
+                <div className="Mask" style={{ opacity: 1, position: 'fixed', top: 0 }}></div>
                 <button
                     title="Toggle dark mode"
                     className="DarkMode-btn"
@@ -73,6 +73,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                     <h1 className="Projects-Title h1">Verkefni</h1>
                     <div className="Projects-List">
                         <Link
+                            id="p1"
                             className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
                             ref={el => { linkRef.current[0] = el }}
                             style={{ opacity: '0' }}
@@ -80,17 +81,19 @@ function Projects({ lightOn, onToggleLightMode }) {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                             to={`${match.url}/game`} >
-                            <FontAwesomeIcon icon={faGamepad} style={{ fontSize: '5em' }} />
+                            Milla
                         </Link>
-                        <div
+                        <a  
+                            id="p2"
                             className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
                             ref={el => { linkRef.current[1] = el }}
                             style={{ opacity: '0' }}
                             onMouseMove={handleMouseMove}
                             onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave} >
-                            Verkefni 2
-                                    </div>
+                            onMouseLeave={handleMouseLeave}
+                            href="https://kristinn-thor.github.io/lazy-loading-img/index.html" >
+                            Myndaalbúm
+                        </a>
                         <div
                             className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
                             ref={el => { linkRef.current[2] = el }}
@@ -99,7 +102,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave} >
                             Verkefni 3
-                                    </div>
+                        </div>
                         <div
                             className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
                             ref={el => { linkRef.current[3] = el }}
@@ -108,7 +111,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave} >
                             Verkefni 4
-                                    </div>
+                        </div>
                         <div
                             className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
                             ref={el => { linkRef.current[4] = el }}
@@ -117,7 +120,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave} >
                             Verkefni 5
-                                    </div>
+                        </div>
                     </div>
                 </div>
             </div>
