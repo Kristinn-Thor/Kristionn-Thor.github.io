@@ -1,21 +1,18 @@
 @import 'Variables';
 
 .Skils {
+    overflow: auto;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     color: white;
 
     &-Container {
         display: flex;
         padding: 10px;
         flex-direction: column;
-        margin: 0 10% 50px 10%;
+        margin: 0 10% 100px 10%;
         background-color: rgba(196, 196, 196, 0.05);
         border-radius: 1em;
-
-        @media (max-height: 550px) {
-            padding-bottom: 15vh;
-        }
     }
 
     &-Title {

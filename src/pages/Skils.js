@@ -2,9 +2,11 @@
 import React from 'react';
 import NumberAnimation from '../components/NumberAnimation';
 import BarAnimation from '../components/BarAnimation';
+import CircleAnimation from '../components/CircleAnimation';
 import '../styles/Skils.scss';
 //-----Icon Imports-----//
 import gsapLogo from '../svg/logo-man.svg';
+import reactLogo from '../svg/react-brands.svg';
 //-----Font Awesome Imports-----//
 import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -22,7 +24,8 @@ function Skils({ lightOn, onToggleLightMode }) {
 
     return (
         <div className="Skils">
-            <div className="Mask" style={ {opacity: 1, position: 'fixed', top:0} }></div>
+
+            <div className="Mask" style={{ opacity: 1, position: 'fixed', top: 0 }}></div>
             <button
                 title="Toggle dark mode"
                 className="DarkMode-btn"
@@ -33,68 +36,89 @@ function Skils({ lightOn, onToggleLightMode }) {
                     style={{ color: `${lightOn ? '#5562DD' : '#29D9B9'}` }}>
                 </FontAwesomeIcon>
             </button>
+
             <h1 className="Skils-Title h1">Kunnátta</h1>
+
             <div className="Skils-Container" style={lightOn ? { backgroundColor: 'rgba(25, 106, 153, 0.2)' } : {}}>
+
                 <div className="Skils-Skill">
                     <h3 className="Skils-Skill-Title h3">
                         <FontAwesomeIcon icon={['fab', 'js-square']} className="icon fa-js" />
-                                    JavaScript
-                                    <span className="Skils-NumberAnimation">
+                        JavaScript
+                        <span className="Skils-NumberAnimation">
                             <NumberAnimation from={0} to={javaSkill} duration={1.5} />%
-                                    </span>
+                        </span>
                     </h3>
                     <span className="Skils-Bars-Container">
-                        <BarAnimation from={0} to={javaSkill} duration={1.5} name="Skils-Bars-java Skils-Bars"></BarAnimation>
+                        <BarAnimation from={0} to={javaSkill} duration={1.5} name="Skils-Bars-java Skils-Bars" />
                     </span>
                 </div>
+
                 <div className="Skils-Skill">
                     <h3 className="Skils-Skill-Title h3">
                         <FontAwesomeIcon icon={['fab', 'html5']} className="icon fa-html" />
-                                    HTML
-                                    <span className="Skils-NumberAnimation">
+                        HTML
+                        <span className="Skils-NumberAnimation">
                             <NumberAnimation from={0} to={htmlSkill} duration={1.5} />%
-                                    </span>
+                        </span>
                     </h3>
                     <span className="Skils-Bars-Container">
-                        <BarAnimation from={0} to={htmlSkill} duration={1.5} name="Skils-Bars-html Skils-Bars"></BarAnimation>
+                        <BarAnimation from={0} to={htmlSkill} duration={1.5} name="Skils-Bars-html Skils-Bars" />
                     </span>
                 </div>
+
                 <div className="Skils-Skill">
                     <h3 className="Skils-Skill-Title h3">
                         <FontAwesomeIcon icon={['fab', 'css3']} className="icon fa-css" />
-                                    CSS
-                                    <span className="Skils-NumberAnimation">
+                        CSS
+                        <span className="Skils-NumberAnimation">
                             <NumberAnimation from={0} to={cssSkill} duration={1.5} />%
-                                    </span>
+                        </span>
                     </h3>
                     <span className="Skils-Bars-Container">
-                        <BarAnimation from={0} to={cssSkill} duration={1.5} name="Skils-Bars-css Skils-Bars"></BarAnimation>
+                        <BarAnimation from={0} to={cssSkill} duration={1.5} name="Skils-Bars-css Skils-Bars" />
                     </span>
                 </div>
+
                 <div className="Skils-Skill">
                     <h3 className="Skils-Skill-Title h3">
                         <FontAwesomeIcon icon={['fab', 'react']} className="icon fa-react" />
-                                    React
-                                    <span className="Skils-NumberAnimation">
+                        React
+                        <span className="Skils-NumberAnimation">
                             <NumberAnimation from={0} to={reactSkill} duration={1.5} />%
-                                    </span>
+                        </span>
                     </h3>
                     <span className="Skils-Bars-Container">
-                        <BarAnimation from={0} to={reactSkill} duration={1.5} name="Skils-Bars-react Skils-Bars"></BarAnimation>
+                        <BarAnimation from={0} to={reactSkill} duration={1.5} name="Skils-Bars-react Skils-Bars" />
                     </span>
                 </div>
+
                 <div className="Skils-Skill">
                     <h3 className="Skils-Skill-Title h3">
                         <img className="icon icon-gsap" alt="GSAP Logo" src={gsapLogo}></img>
-                                    GSAP
-                                    <span className="Skils-NumberAnimation">
+                        GSAP
+                        <span className="Skils-NumberAnimation">
                             <NumberAnimation from={0} to={gsapSkill} duration={1.5} />%
-                                    </span>
+                        </span>
                     </h3>
                     <span className="Skils-Bars-Container">
-                        <BarAnimation from={0} to={gsapSkill} duration={1.5} name="Skils-Bars-gsap Skils-Bars"></BarAnimation>
+                        <BarAnimation from={0} to={gsapSkill} duration={1.5} name="Skils-Bars-gsap Skils-Bars" />
                     </span>
                 </div>
+
+                <div style={{ position: 'realtive' }}>
+                    <CircleAnimation
+                        from={0}
+                        to={360}
+                        duration={1}
+                        logoSource={reactLogo}
+                        logoText='React'
+                        textColor='#FFF'
+                        circleColor='#61DBFB'
+                        
+                    />
+                </div>
+
             </div>
         </div>
     );
