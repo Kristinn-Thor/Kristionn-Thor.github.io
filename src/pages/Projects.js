@@ -39,7 +39,6 @@ function Projects({ lightOn, onToggleLightMode }) {
 
     useEffect(() => {
         if (match.isExact) { // Only play tween if we render /projects exact page
-            console.info(window.innerWidth);
             if (window.innerWidth > 641) { // The effect makes no sense for mobile devices
                 gsap.timeline()
                     .fromTo(linkRef.current[0], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))

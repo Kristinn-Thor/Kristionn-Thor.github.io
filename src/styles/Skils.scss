@@ -1,18 +1,19 @@
 @import 'Variables';
 
 .Skils {
-    overflow: auto;
     width: 100%;
-    min-height: 100vh;
-    color: white;
 
     &-Container {
         display: flex;
-        padding: 10px;
-        flex-direction: column;
-        margin: 0 10% 100px 10%;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 1rem 100px 1rem;
         background-color: rgba(196, 196, 196, 0.05);
         border-radius: 1em;
+        @media (min-width: 800px) {
+            max-width: 800px;
+            margin: auto;
+        }
     }
 
     &-Title {
@@ -20,58 +21,7 @@
         padding: 100px 10% 25px 10%;
     }
 
-    &-NumberAnimation {
-        margin-left: .5em;
-    }
-
     &-Skill {
-        margin-bottom: 1.5em;
-
-        @media (max-width: 360px) {
-            margin-bottom: 1em;
-        }
-
-        &-Title {
-            margin-bottom: .2em;
-        }
+        padding: .5rem;
     }
-
-    &-Bars-Container {
-        background-color: none;
-        display: block;
-        width: 100%;
-        height: 1rem;
-
-        @media (max-width: 768px) {
-            height: .6em;
-        }
-
-        @media (max-width: 360px) {
-            height: .5em;
-        }
-    }
-
-    &-Bars {
-        border-radius: 1em;
-        &-java {
-            background-color: $Java-Color;
-        }
-
-        &-html {
-            background-color: $HTML-Color;
-        }
-
-        &-css {
-            background-color: $CSS-Color;
-        }
-
-        &-react {
-            background-color: $React-Color;
-        }
-
-        &-gsap {
-            background-color: #08D80C;
-        }
-    }
-    
 }

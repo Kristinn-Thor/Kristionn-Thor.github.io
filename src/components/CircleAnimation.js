@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { TweenLite } from "gsap";
 
-const NumberAnimation = ({ logoSource, logoText, textColor, circleColor, from, to, duration }) => {
+const NumberAnimation = ({ className, logoSource, logoScale, logoX, logoY, logoText, textColor,textSize ,textX, textY, circleColor, from, to, duration }) => {
 
   const [deg, setDeg] = useState(from); // Animation starts from this number
 
@@ -11,30 +11,32 @@ const NumberAnimation = ({ logoSource, logoText, textColor, circleColor, from, t
     };
     const tween1 = TweenLite.to(myObject, duration, {
       totalValue: to, // Finishing number
+      ease: 'power4.inOut',
       onUpdate: () => { // 	A function to call every time the animation updates (on each "tick" that moves its playhead).
         setDeg(myObject.totalValue); // Every time we animate our object, we will update the state
       }
     });
     tween1.play();
-
     return function cleanup() { // When component unmounts we stop the animation(stop trying to update the state)
       tween1.kill();
     }
   }, [from, to, duration]);
 
-  const circleStyle = {
-    position: 'relative',
-    height: '150',
-    width: '150',
-    border: '2px solid white'
+  const baseStyle = {
+    height: '100',
+    width: '100'
   };
 
   return (
     <>
-      <svg viewBox='-30 0 160 130' style={circleStyle}>
-        <circle cx='50' cy='50' r='57' stroke={circleColor} strokeWidth='10' strokeDasharray={`${deg} 360`} fill='none' />
-        <image x='5' y='5' width='90' height='90' href={`${logoSource}`} />
-        <text fill={textColor} fontWeight='bold' fontSize='30' x='10' y='140' >{logoText}</text>
+      <svg viewBox='-35 5 170 130' style={baseStyle} className={className}>
+        <circle cx='50' cy='50' r='57' stroke={circleColor} strokeWidth='10' strokeDasharray={`${deg} 360`} strokeLinecap="round" fill='none' />
+        <image id='logo' x={logoX} y={logoY} width={logoScale} height={logoScale} href={`${logoSource}`} />
+        <text fill={textColor} fontWeight='bold' fontSize={textSize} x={textX} y={textY} >{logoText}</text>
+        <animate>
+          xlink:href='logo'
+
+        </animate>
       </svg>
     </>
   );
