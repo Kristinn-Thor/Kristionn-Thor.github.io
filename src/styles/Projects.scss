@@ -7,18 +7,28 @@
     &-Container {
         display: flex;
         flex-direction: column;
-        padding: 100px 15% 30% 15%;
+        padding: 100px 10% 30% 10%;
+        @media (max-width: 559px) {
+            padding: 100px 0 30% 0;     
+        }
     }
 
     &-Title {
         color: $Theme-ColorGreen;
         margin-bottom: 25px;
+        @media (max-width: 559px) {
+            align-self: center;
+        }
     }
 
     &-List {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 3rem;
+        @media (max-width: 559px) {
+        display: flex;
+        flex-direction: column;      
+        }
 
         &-Item {
             display: flex;
@@ -26,13 +36,18 @@
             justify-content: center;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.5rem;
             color: $Theme-ColorGreen;
             background-color: $Effect-Color;
             min-height: 120px;
             border-radius: 2rem;
-            border: 1px solid $Theme-ColorGreen;
             box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.2), 0px 0px 20px rgba(#000000, $alpha: 0.2);
             cursor: pointer;
+            @media (max-width: 559px) {
+                min-height: 300px;
+                border-radius: 0rem;
+                box-shadow: none;
+            }
 
             &-LM {
                 color: $Theme-ColorBlue;
@@ -45,12 +60,10 @@
 
 #p1 {
     background-image: url(../img/tictactoe.png);
-    background-size: 100% 100%;
-    object-fit: contain;
+    background-size: cover;
 }
 
 #p2 {
     background-image: url(../img/myndaalbum.png);
-    background-size: 100% 100%;
-    object-fit: contain;
+    background-size: cover;
 }

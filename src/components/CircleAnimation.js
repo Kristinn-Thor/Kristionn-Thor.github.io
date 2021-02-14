@@ -22,14 +22,9 @@ const NumberAnimation = ({ className, logoSource, logoScale, logoX, logoY, logoT
     }
   }, [from, to, duration]);
 
-  const baseStyle = {
-    height: '100',
-    width: '100'
-  };
-
   return (
     <>
-      <svg viewBox='-35 5 170 130' style={baseStyle} className={className}>
+      <svg viewBox='-35 5 170 130' className={className}>
         <circle cx='50' cy='50' r='57' stroke={circleColor} strokeWidth='10' strokeDasharray={`${deg} 360`} strokeLinecap="round" fill='none' />
         <image id='logo' x={logoX} y={logoY} width={logoScale} height={logoScale} href={`${logoSource}`} />
         <text fill={textColor} fontWeight='bold' fontSize={textSize} x={textX} y={textY} >{logoText}</text>

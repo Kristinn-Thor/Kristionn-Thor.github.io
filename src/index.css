@@ -39,7 +39,9 @@
   }
 
   p {
+    color: #c8c8c8;
     letter-spacing: 1.5px;
+    max-width: 60ch;
   }
 
   li {

@@ -42,10 +42,7 @@ function Projects({ lightOn, onToggleLightMode }) {
             if (window.innerWidth > 641) { // The effect makes no sense for mobile devices
                 gsap.timeline()
                     .fromTo(linkRef.current[0], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
-                    .fromTo(linkRef.current[1], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
-                    .fromTo(linkRef.current[2], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
-                    .fromTo(linkRef.current[3], { yPercent: '-400' }, { yPercent: '0', opacity: 1, duration: 0.9, ease: 'back' }, random(0, 0.5))
-                    .fromTo(linkRef.current[4], { yPercent: '-500' }, { yPercent: '0', opacity: 1, duration: 0.9, ease: 'back' }, random(0, 0.5));
+                    .fromTo(linkRef.current[1], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5));
             } else {
                 linkRef.current.forEach(element => {
                     element.style = { opacity: '1' };
@@ -93,33 +90,6 @@ function Projects({ lightOn, onToggleLightMode }) {
                             href="https://kristinn-thor.github.io/lazy-loading-img/index.html" >
                             Myndaalbúm
                         </a>
-                        <div
-                            className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
-                            ref={el => { linkRef.current[2] = el }}
-                            style={{ opacity: '0' }}
-                            onMouseMove={handleMouseMove}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave} >
-                            Verkefni 3
-                        </div>
-                        <div
-                            className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
-                            ref={el => { linkRef.current[3] = el }}
-                            style={{ opacity: '0' }}
-                            onMouseMove={handleMouseMove}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave} >
-                            Verkefni 4
-                        </div>
-                        <div
-                            className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
-                            ref={el => { linkRef.current[4] = el }}
-                            style={{ opacity: '0' }}
-                            onMouseMove={handleMouseMove}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave} >
-                            Verkefni 5
-                        </div>
                     </div>
                 </div>
             </div>
