@@ -37,14 +37,16 @@ function Home({ lightOn, onToggleLightMode }) {
                     className="Home-Section-Title"
                     ref={el => { textRef.current[0] = el }}
                     style={textStyle}
-                >Velkominn</h1>
-                <p
+                >
+                    Velkominn
+                </h1>
+                <h3
                     className="Home-Section-Text"
                     ref={el => { textRef.current[1] = el }}
                     style={textStyle}
                 >
-                    Velkominn á heimasíðuna mína. Hér má finna upplýsingar um mig, það sem ég kann og nokkur verkefni tengd vefforritunun sem ég hef lokið.
-                </p>
+                    Hæ, ég heiti Kristinn og er vefforritari.
+                </h3>
             </section>
         </div>
     );
