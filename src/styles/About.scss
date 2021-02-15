@@ -5,8 +5,9 @@
 
     &-Container {
         position: relative;
-        display: grid;
-        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 100px 10% 15% 10%;
 
         &-Header {
@@ -20,6 +21,10 @@
             border-radius: 1rem;
             padding: 1rem;
             margin-bottom: 25px;
+            & span {
+                display: inline-block;
+                margin-bottom: 1rem;
+            }
         }
 
     }

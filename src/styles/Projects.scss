@@ -7,9 +7,10 @@
     &-Container {
         display: flex;
         flex-direction: column;
-        padding: 100px 10% 30% 10%;
+        overflow: hidden;
+        padding: 100px 10% 120px 10%;
         @media (max-width: 559px) {
-            padding: 100px 0 30% 0;     
+            padding: 100px 0 120px 0;     
         }
     }
 

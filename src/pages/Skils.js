@@ -1,7 +1,9 @@
 //-----React Import-----//
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import CircleAnimation from '../components/CircleAnimation';
 import '../styles/Skils.scss';
+//-----GSAP-----//
+import { TweenLite } from 'gsap';
 //-----Icon Imports-----//
 import gsapLogo from '../svg/logo-man.svg';
 import reactLogo from '../svg/react-brands.svg';
@@ -16,6 +18,13 @@ import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Skils({ lightOn, onToggleLightMode }) {
+
+    useEffect(() => {
+        TweenLite.staggerTo(textRef.current, 2, { opacity: '1' }, 0.2);
+    }, []);
+
+    let textRef = useRef([]);
+    const elementStyle = { opacity: '0'};
 
     return (
         <div className="Skils">
@@ -33,19 +42,33 @@ function Skils({ lightOn, onToggleLightMode }) {
             </button>
 
             <div className="Skils-Container">
-                <h1 className="Skils-Title h1">Tæknikunnátta</h1>
+                <h1
+                    className="Skils-Title h1"
+                    ref={el => { textRef.current[0] = el }}
+                    style={elementStyle}
+                >
+                    Tæknikunnátta
+                </h1>
 
                 <section className="Skils-Section">
-                    <p className="Skils-Text">
+                    <p
+                        className="Skils-Text"
+                        ref={el => { textRef.current[1] = el }}
+                        style={elementStyle}
+                    >
                         Ég hef að mestu einblínt á framendann HTML, CSS, JavaScript og React.
                         En er einnig með smá reynslu á bakendanum með node.js, express.js og SQL.
                 </p>
-                    <div className="Skils-Icon-Container" style={lightOn ? { backgroundColor: 'rgba(20, 20, 50, 0.3)' } : {}}>
+                    <div
+                        className="Skils-Icon-Container"
+                        style={lightOn ? { backgroundColor: 'rgba(20, 20, 50, 0.3)', opacity: '0' } : {opacity: '0'}}
+                        ref={el => { textRef.current[2] = el }}
+                    >
                         <CircleAnimation
                             className="Skils-Skill"
                             from={0}
                             to={360}
-                            duration={1}
+                            duration={2}
                             logoSource={jsLogo}
                             logoScale='75'
                             logoX='12'
@@ -61,7 +84,7 @@ function Skils({ lightOn, onToggleLightMode }) {
                             className="Skils-Skill"
                             from={0}
                             to={360}
-                            duration={1}
+                            duration={2}
                             logoSource={htmlLogo}
                             logoScale='85'
                             logoX='7'
@@ -77,7 +100,7 @@ function Skils({ lightOn, onToggleLightMode }) {
                             className="Skils-Skill"
                             from={0}
                             to={360}
-                            duration={1}
+                            duration={2}
                             logoSource={cssLogo}
                             logoScale='80'
                             logoX='10'
@@ -93,7 +116,7 @@ function Skils({ lightOn, onToggleLightMode }) {
                             className="Skils-Skill"
                             from={0}
                             to={360}
-                            duration={1}
+                            duration={2}
                             logoSource={gsapLogo}
                             logoScale='90'
                             logoX='-5'
@@ -109,7 +132,7 @@ function Skils({ lightOn, onToggleLightMode }) {
                             className="Skils-Skill"
                             from={0}
                             to={360}
-                            duration={1}
+                            duration={2}
                             logoSource={reactLogo}
                             logoScale='90'
                             logoX='5'
@@ -125,7 +148,7 @@ function Skils({ lightOn, onToggleLightMode }) {
                             className="Skils-Skill"
                             from={0}
                             to={360}
-                            duration={1}
+                            duration={2}
                             logoSource={gitLogo}
                             logoScale='90'
                             logoX='5'
@@ -141,7 +164,7 @@ function Skils({ lightOn, onToggleLightMode }) {
                             className="Skils-Skill"
                             from={0}
                             to={360}
-                            duration={1}
+                            duration={2}
                             logoSource={javaLogo}
                             logoScale='80'
                             logoX='10'
@@ -157,7 +180,7 @@ function Skils({ lightOn, onToggleLightMode }) {
                             className="Skils-Skill"
                             from={0}
                             to={360}
-                            duration={1}
+                            duration={2}
                             logoSource={npmLogo}
                             logoScale='80'
                             logoX='10'

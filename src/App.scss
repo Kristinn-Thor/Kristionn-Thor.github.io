@@ -51,7 +51,7 @@
    left: 0;
    opacity: 0;
    width: 100%;
-   height: 80%;
+   min-height: 100%;
    background: linear-gradient(45deg, $Theme-ColorBlue, $Theme-ColorGreen);
    mask-image: url(./svg/Background-Lines.svg);
    mask-repeat: no-repeat;
