@@ -44,7 +44,7 @@ function About({ lightOn, onToggleLightMode }) {
                             notendaupplifun og gera hönnun skalanlega.
                         </span>
                         <span>Metnaðarfullur, vandvirkur og með auga fyrir smáatriðum.</span>
-                        <span>Önnur áhugamál eru hlaup🏃‍♂️, fjallgöngur⛰️ og kaffidrykkja☕.</span>
+                        <span>Önnur áhugamál eru hlaup🏃‍♂️, líkamsrækt🏋️ og fjallgöngur⛰️.</span>
                     </p>
                 </div>
             </div>
