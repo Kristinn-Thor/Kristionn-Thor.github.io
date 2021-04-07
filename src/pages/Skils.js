@@ -24,7 +24,7 @@ function Skils({ lightOn, onToggleLightMode }) {
     }, []);
 
     let textRef = useRef([]);
-    const elementStyle = { opacity: '0'};
+    const elementStyle = { opacity: '0' };
 
     return (
         <div className="Skils">
@@ -56,12 +56,13 @@ function Skils({ lightOn, onToggleLightMode }) {
                         ref={el => { textRef.current[1] = el }}
                         style={elementStyle}
                     >
-                        Ég hef að mestu einblínt á framendann HTML, CSS, JavaScript og React.
-                        En er einnig með smá reynslu á bakendanum með node.js, express.js og SQL.
-                </p>
+                        <span>Helstu tæki og tól sem ég unnið með eru eftirfarandi:</span>
+                        <br />
+                        HTML - CSS - JavaScript - React - node.js - express.js - GraphQL - SQL
+                    </p>
                     <div
                         className="Skils-Icon-Container"
-                        style={lightOn ? { backgroundColor: 'rgba(20, 20, 50, 0.3)', opacity: '0' } : {opacity: '0'}}
+                        style={lightOn ? { backgroundColor: 'rgba(20, 20, 50, 0.3)', opacity: '0' } : { opacity: '0' }}
                         ref={el => { textRef.current[2] = el }}
                     >
                         <CircleAnimation

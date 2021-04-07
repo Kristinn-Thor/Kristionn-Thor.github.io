@@ -42,7 +42,8 @@ function Projects({ lightOn, onToggleLightMode }) {
             if (window.innerWidth > 641) { // The effect makes no sense for mobile devices
                 gsap.timeline()
                     .fromTo(linkRef.current[0], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
-                    .fromTo(linkRef.current[1], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5));
+                    .fromTo(linkRef.current[1], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5))
+                    .fromTo(linkRef.current[2], { yPercent: '-300' }, { yPercent: '0', opacity: 1, duration: 0.8, ease: 'back' }, random(0, 0.5));
             } else {
                 linkRef.current.forEach(element => {
                     element.style = { opacity: '1' };
@@ -79,7 +80,7 @@ function Projects({ lightOn, onToggleLightMode }) {
                             to={`${match.url}/game`} >
                             Milla
                         </Link>
-                        <a  
+                        <a
                             id="p2"
                             className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
                             ref={el => { linkRef.current[1] = el }}
@@ -89,6 +90,17 @@ function Projects({ lightOn, onToggleLightMode }) {
                             onMouseLeave={handleMouseLeave}
                             href="https://kristinn-thor.github.io/lazy-loading-img/index.html" >
                             Myndaalbúm
+                        </a>
+                        <a
+                            id="p3"
+                            className={`Projects-List-Item${lightOn ? ' Projects-List-Item-LM' : ''}`}
+                            ref={el => { linkRef.current[2] = el }}
+                            style={{ opacity: '0' }}
+                            onMouseMove={handleMouseMove}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                            href="https://linkasafn.herokuapp.com/" >
+                            Linkasafn
                         </a>
                     </div>
                 </div>

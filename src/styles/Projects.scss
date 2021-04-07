@@ -1,16 +1,16 @@
-@import 'Variables';
+@import "Variables";
 
 .Projects {
     width: 100%;
     height: 100%;
-    
+
     &-Container {
         display: flex;
         flex-direction: column;
         overflow: hidden;
         padding: 100px 10% 120px 10%;
         @media (max-width: 559px) {
-            padding: 100px 0 120px 0;     
+            padding: 100px 0 120px 0;
         }
     }
 
@@ -27,8 +27,8 @@
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 3rem;
         @media (max-width: 559px) {
-        display: flex;
-        flex-direction: column;      
+            display: flex;
+            flex-direction: column;
         }
 
         &-Item {
@@ -38,7 +38,7 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.5rem;
-            color: $Theme-ColorGreen;
+            color: #c5fff4;
             background-color: $Effect-Color;
             min-height: 120px;
             border-radius: 2rem;
@@ -48,23 +48,28 @@
                 min-height: 300px;
                 border-radius: 0rem;
                 box-shadow: none;
+                font-size: 2.8rem;
             }
 
             &-LM {
-                color: $Theme-ColorBlue;
+                color: #e9ebff;
                 background-color: $Effect-Color-LM;
             }
         }
     }
-    
 }
 
 #p1 {
-    background-image: url(../img/tictactoe.png);
+    background-image: linear-gradient(0deg, rgba(110, 0, 64, 0.5), rgba(0, 92, 61, 0.5)), url(../img/tictactoe.png);
     background-size: cover;
 }
 
 #p2 {
-    background-image: url(../img/myndaalbum.png);
+    background-image: linear-gradient(0deg, rgba(110, 0, 64, 0.5), rgba(0, 92, 61, 0.5)), url(../img/myndaalbum.png);
+    background-size: cover;
+}
+
+#p3 {
+    background-image: linear-gradient(0deg, rgba(110, 0, 64, 0.5), rgba(0, 92, 61, 0.5)), url(../img/linkasafn.png);
     background-size: cover;
 }
